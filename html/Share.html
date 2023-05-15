@@ -4,14 +4,15 @@
         <meta charset="utf-8">
         <title>집들이Share</title>
         <style>
-
+            /* font설정 */
             @font-face {
                 font-family: "MyFont";
                 src: url("../font/pretendard_bold.otf");
             }
-
             p{font-family: "MyFont", sans-serif;}
             p{text-align: justify;}
+
+            /* div설정 */
             img {
                 width: 45%;
                 height: 45%;
@@ -21,6 +22,31 @@
                 justify-content: flex-start;
                 flex-direction: column-reverse;
             }
+
+            /* floating 버튼 */
+            .floating-button {
+                background: url( "../image/icons8-edit-480.png" ) no-repeat;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                position: fixed;
+                right: 50px;
+                bottom: 150px;
+                z-index: 999;
+            }
+            /* input.floating-button {
+                display: flex;
+                position: fixed;
+                right: 50px;
+                bottom: 150px;
+                z-index: 999;
+
+                border: none;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+            } */
+            
         </style>
         <script>
 
@@ -79,6 +105,8 @@
                     </p>
                 </div>
             </div>
+            <!-- <input type="button" class="floating-button"> -->
+            <BUtton type="button" class="floating-button"></BUtton>
         </main>
     </body>
 </html>
