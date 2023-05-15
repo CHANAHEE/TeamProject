@@ -1,0 +1,11 @@
+html {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    height: 100%;
+  }
+  .slider {
+    width: 360px;
+    height: 100px;
+  }
