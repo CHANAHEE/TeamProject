@@ -33,8 +33,8 @@
     $result=mysqli_query($db,$sql);
 
     //$result로 확인 echo
-    if($result) echo "리뷰가 등록 되었습니다.";
-    else echo "리뷰 등록 취소/실패".$result;
+    if($result) echo true;
+    else echo false;
 
     mysqli_close($db);
 

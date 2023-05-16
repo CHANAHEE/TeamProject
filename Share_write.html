@@ -3,48 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>review_write</title>
-        <style>
-            #profile{
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-            }
-
-            /* 미리보기 이미지 사이즈조정 */
-            #preview {
-                width: 50%;
-                height: 50%;
-            }
-            .input_container {
-                display: flex;
-                flex-direction: column;
-                align-content: center;
-            }
-            .item {
-                display: inline-flex;
-                flex-direction: row;
-                align-content: baseline;
-                flex-wrap: wrap;
-                max-width: 50%;
-            }
-
-        </style>
-        <script>
-
-            // 이미지 업로드 미리보기 js
-            function setThumbnail(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                    document.getElementById('preview').src = e.target.result;
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                } else {
-                    document.getElementById('preview').src = "";
-                }
-            }
-
-          </script>
+        <link rel="stylesheet" href="./css/share.css">
+        <script src="./js/share.js"></script>
     </head>
     <body>
         <div class="container_main">
@@ -54,19 +14,19 @@
                         <img id="profile" src="./image/profile/profile02.png" alt="profile">
                         <p id="name">김마리씨</p>
                     </div>
-                    <div class="item">
+                    <div class="itemw">
                         <input type="file" name="rimg" id="rimg" accept="image/*" onchange="setThumbnail(this);"/>             
                     </div>
-                    <div class="item">
+                    <div class="itemw">
                         <img id="preview" alt="올릴파일">
                     </div>
-                    <div class="item">
+                    <div class="itemw">
                         <input type="text" name="title" id="title"/>
                     </div>
-                    <div class="item">
+                    <div class="itemw">
                         <input type="text" name="review" id="review"/>
                     </div>
-                    <div class="item">
+                    <div class="itemw">
                         <input type="submit" value="리뷰등록"/>
                     </div>
                 </div>
