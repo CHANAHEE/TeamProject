@@ -24,58 +24,68 @@
         font-family: "regularFont",sans-serif;
     }
     header{
+        width: 100%;
+        background-color: red;
         position: fixed;
+        display: flex;
         border-bottom: 1px solid rgb(226, 226, 226);
     }
+
+    #forBorder{
+        background-color: rebeccapurple;
+        position: fixed;
+        display: flex;
+        width: 100%;
+        width: fit-content;
+    }
+
+
     #header{
         display: flex;
         margin: 20px 400px 0px 400px;
+        background-color: aquamarine;
     }
     #logo{
+        display: flex;
         margin-right: 100px;
     }
-    #menu {
-        align-self: center;
-    }
-    #menu ul{
-        flex-grow: 1;
-        display: flex;
-    }
-    #menu ul li{
-        display: flex;
-        margin-right: 40px;
-        font-family: "boldFont",sans-serif;
-        font-size: 25px;
-    }
+
     #login {
-        margin-left: auto;
         margin-top: 2px;
     }
+
     #login ul{
         flex-grow: 10;
         display: flex;
         
     }
+
     #login ul li {
         display: flex;
         margin-right: 25px;
         margin-top: 5px;
     }
+
     #login ul a {
         text-decoration: none;
         color: black;
     }
+
     #edit{
+        display: flex;
         margin-left: 0px;
         margin-top: 2px;
     }
+
     #edit button{
         border: 0px;
         background-color: rgb(29, 146, 255);
         color: white;
         border-radius: 4px;
         padding: 5px 20px;
+        margin-left: auto;
     }
+
     section{
         height: 1000px;
         display: flex;
@@ -86,13 +96,124 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     footer{
         border-top: 1px solid rgb(226, 226, 226);
     }
+    
     footer div p{
         text-align: center;
         margin-top: 20px;
     }
+
+    /* 햄버거 메뉴 */
+    input[id="menuicon"] {
+        display: none;
+        
+    }
+
+    input[id="menuicon"] + label {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    input[id="menuicon"] + label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background:#000;
+        transition:all .35s;
+    }
+
+    input[id="menuicon"] + label span:nth-child(1) {
+        top:0;
+    }
+    input[id="menuicon"] + label span:nth-child(2) {
+        top:50%;
+        transform: translateY(-50%);
+    }
+    input[id="menuicon"] + label span:nth-child(3) {
+        bottom: 0;
+    }
+
+    input[id="menuicon"]:checked + label {z-index:3;}
+    input[id="menuicon"]:checked + label span {background:#fff;}
+
+    input[id="menuicon"]:checked + label span:nth-child(1){
+        top:50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2){
+        opacity: 0;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3){
+        top:50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    /* 드로우어(서랍) 메뉴 */
+    div[class="sidebar"] {
+        width: 300px;
+        height: 100%;
+        background:rgb(150, 148, 148);
+        position: fixed;
+        top: 0;
+        left: -300px;
+        z-index: 2;
+        transition: all .35s;
+    }
+    input[id="menuicon"]:checked + label + div {
+        left: 0;
+    }
+
+
+
+    /* 사이드 메뉴  */
+
+    .menu {
+        margin:40px;
+        margin-top: 80px;
+        width: 80%;
+        height: 80%;
+        /* border: 1px dashed; */
+        color: #fff;
+    }
+    .category_list{
+        list-style:none;
+        margin:0; 
+        padding:0;
+        font-size: 1.2em;
+        font-weight: 550;
+        margin-top: 0.5em;
+
+    }
+
+    .sub_category_list{
+        list-style:none;
+        margin:0;
+        padding:2;
+        padding-left: 25;
+        font-size: 0.8em;
+    }
+
+    .h4main{
+        margin-bottom: 1em;
+    }
+    .h4main:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .side_list:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }   
+
   }
 
   
