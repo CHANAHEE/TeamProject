@@ -1,11 +1,134 @@
-html {
-    height: 100%;
+/* 기본설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  body {
-    display: flex;
-    height: 100%;
-  }
-  .slider {
-    width: 360px;
-    height: 100px;
-  }
+  
+a {
+    text-decoration: none;
+    color: #525252;
+}
+
+/* 폰트설정 */
+@font-face {
+    font-family: 'pretendard_regular';
+    src: url(../font/pretendard_regular.otf);
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'pretendard_bold';
+    src: url(../font/pretendard_bold.otf);
+}
+
+body, html {
+    line-height: 1;
+    font-family: 'pretendard_regular';
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.4px;
+    font-size: 1rem;
+}
+
+
+/* 배너 */
+.slider {
+    width: 90%;
+    max-width: 1240px;
+    height: 70%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    align-content: center;
+}
+
+.box {
+    height: max-content;
+    color: #fff;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.text {
+    font-size: 1.7rem;
+    font-family: 'pretendard_bold';
+    margin-bottom: 60px;
+}
+
+.sub {
+    font-size: 1rem;
+    font-family: 'pretendard_regular';
+    margin-top: 60px;
+    margin-bottom: 0.6rem;
+}
+
+/* 콘텐츠 블럭 타이틀 */
+.titlebox {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.title {
+    width: 90%;
+    font-family: 'pretendard_bold';
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+
+/* 콘텐츠 블럭 */
+.container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+  
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+  
+/* 데스크탑일때 4컬럼*/
+@media screen and (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+}
+  
+.card {
+    min-height: 100%;
+    background: #EEE;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* display: flex; */
+    /* flex-direction: column; */
+    position: relative;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1em;
+}
+  
+/* .card:hover {
+    top: -3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+} */
+  
+.card article {
+    padding: 1rem 0.5rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: space-between;
+    flex: 1;
+    background-color: white;
+}
+  
+.image {
+    padding-bottom: 70%;
+    background-size: cover;
+    background-position: center center;
+}
+  
+.card p {
+    flex: 1;
+    line-height: 1.4;
+}
