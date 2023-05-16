@@ -24,23 +24,29 @@
             }
 
             /* floating 버튼 */
-            *{padding:0;margin:0;}
-            .float{
-                position:fixed;
-                width:60px;
-                height:60px;
-                bottom:40px;
-                right:40px;
-                background-color:#0C9;
-                color:#FFF;
-                border-radius:50px;
-                text-align:center;
-                box-shadow: 2px 2px 3px #999;
+            .floating-button {
+                background: url( "../image/icons8-edit-480.png" ) no-repeat;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                position: fixed;
+                right: 50px;
+                bottom: 150px;
+                z-index: 999;
             }
+            /* input.floating-button {
+                display: flex;
+                position: fixed;
+                right: 50px;
+                bottom: 150px;
+                z-index: 999;
 
-            .my-float{
-                margin-top:22px;
-            }    
+                border: none;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+            } */
+            
         </style>
         <script>
 
@@ -99,14 +105,8 @@
                     </p>
                 </div>
             </div>
-            <!-- floating action button -->
-            <a style="padding:10px;display:block;" href="" target="_blank">Click here for complete tutorial</a>
-
-            <!-- Code begins here -->
-            
-            <a href="#" class="float">
-            <i class="fa fa-plus my-float"></i>
-            </a>
+            <!-- <input type="button" class="floating-button"> -->
+            <BUtton type="button" class="floating-button"></BUtton>
         </main>
     </body>
 </html>
