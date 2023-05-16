@@ -3,21 +3,34 @@
     <head>
         <meta charset="utf-8">
         <title>내일의 집</title>
+        <link rel="stylesheet" href="./css/login.css">
     </head>
     <body>
-        <section class="login form">
-            <h1>로그인</h1>
-            <form action="">
-                <div class="int-area">
-                    <input type="email" name="id" id="id" placeholder="이메일" autocomplete="off" required>
+        <section class="login">
+            <div id="title">
+                <a href="./index.html"><img src="./image/ms21.png" alt="" width="50px"></a>
+            </div>
+            <div id="info">
+                <form action="">
+                    <div class="info">
+                        <input type="email" name="id" id="id" placeholder="이메일" autocomplete="off" required>
+                    </div>
+                    <div class="info">
+                        <input type="password" name="password" id="password" placeholder="비밀번호" autocomplete="off" required>
+                    </div>
+                    <div id="loginButton">
+                        <button type="submit">로그인</button>
+                    </div>
+                </form>
+            </div>
+            <div id="option">
+                <div id="passInit">
+                    <a href="">비밀번호 재설정</a>
                 </div>
-                <div class="int-area">
-                    <input type="password" name="password" id="password" placeholder="비밀번호" autocomplete="off" required>
+                <div id="signUp">
+                    <a href="">회원가입</a>
                 </div>
-                <div class="btn-area">
-                    <button type="submit">로그인</button>
-                </div>
-            </form>
+            </div>
             <div class="caption">
                 <a href="">혹시, 비밀번호를 잊어버리셨나요?</a>
             </div>
