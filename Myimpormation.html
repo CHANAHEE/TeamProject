@@ -1,94 +1,81 @@
-Copy code
 <!DOCTYPE html>
-<html lang="kr">
+<html>
 <head>
-    <title>두루마리</title>
-    <meta charset="utf-8">
-    <style>
-        /* 기본적인 스타일링 추가 */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .media-left {
-            display: none;
-        }
-        .container.show-media .media-left {
-            display: block;
-        }
-        .media-body {
-            display: none;
-        }
-        .container.show-media .media-body {
-            display: block;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const profileButton = document.querySelector("#profile-button");
-            const shoppingButton = document.querySelector("#shopping-button");
-            const mediaLeft = document.querySelector(".media-left");
-            const mediaBody = document.querySelector(".media-body");
-            
-            profileButton.addEventListener("click", function() {
-                mediaLeft.classList.toggle("show-media");
-                mediaBody.classList.toggle("show-media");
-            });
-            
-            shoppingButton.addEventListener("click", function() {
-                mediaLeft.classList.toggle("show-media");
-                mediaBody.classList.toggle("show-media");
-            });
-        });
-    </script>
-</head>
-<body>
-    <div class="container">
-        <button id="profile-button">프로필</button>
-        <!-- 프로필 사진 부분-->
-        <div class="media-left">
-            <img id="profileimg" src="" class="media-object" style="width:60px">
-            
-            <!-- 파일 -->
-            <div id="showfile">
-            </div>
-
-            <div class="media-body">
-                <h4 class="media-heading" id="nickname">닉네임</h4>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading" id="email">이메일</h4>
-                <hr>
-            </div>
+  <title>내정보</title>
+  <style>
+  .segment-1-PMy {
+    align-items
+    : 
+    center;
+    display
+    : 
+    flex;
+    flex-direction
+    : 
+    column;
+    flex-shrink
+    : 
+    0;
+    height
+    : 
+    100%;
+    }
+</style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="css/Myimpormation.css">
+    <div class="toolbar" id="toolbar">
+        <div class="toolbar-retangle" id="toolbar-retangle">
         </div>
-        <h5>닉네임 변경</h5><button type="button">></button><hr>
-        <h5>비밀번호 변경</h5><button type="button">></button><hr>
-        <h5>내 작성글</h5><button type="button">></button><hr>
-        <h5>알림설정</h5><button type="button">></button><hr>
-
-
-        <!-- 내쇼핑 -->
-        <button id="shopping-button">내쇼핑</button>
-        <div class="media-body">
-            <p>입금대기 > 결제완료 >배송준비 > 배송중 > 배송완료</p>
-            <hr>
+        <div class="tab-group-fYK" id="102:430">
+        <div class="tab-1-D43" id="102:431">
+        <div class="tab-contents-jYB" id="I102:431;52184:32376">
+        <p class="item-profile" id="profile">프로필</p>
+        <div class="auto-group-profile" id="profile"></div>
         </div>
-        <h2>진행중인 주문</h2> <br>
-        <h3>입금 대기</h3> 
-        <h2>></h2>
-        <h3>결제 완료</h3>
-        <h2>></h2>
-        <h3>배송 준비</h3>
-        <h2>></h2>
-        <h3>배송중</h3>
-        <h2>></h2>
-        <h3>배송 완료</h3>
-        <hr>
-        <h2>주문배송 조회</h2><button type="button">></button><hr>
-        <h2>내 문의</h2><button type="button">></button><hr>
-        <h2>내 리뷰</h2><button type="button">></button><hr>
-        <h2>고객센터</h2><button type="button">></button><hr>
         </div>
-        </body>
+        <div class="tab-2" id="shoppingtap">
+        <div class="auto-group-myshopping" id="myshopping">내쇼핑</div>
+        </div>
+        </div>
+        <div class="log-retangle" id="logRetangle">
+        <img class="avatars" src="/api/try-prod-ap-southeast-1-first-cluster/project..." id="photo"/>
+        <div class="auto-group-sfmh-gtf" id="LnfpN444ijA8QpzRbZsfMH">
+        <p class="item-id" id="logid">큐티가이</p>
+        <p class="item-email" id="logemail">cutyguy123@gamil.com</p>
+        </div>
+        </div>
+        <div class="auto-group" id="au">
+        <div class="rectangle-17-kGF" id="102:438"></div>
+        <div class="rectangle-19-t7Z" id="102:439"></div>
+        <div class="rectangle-21-dL3" id="102:440"></div>
+        <div class="rectangle-23-Aqm" id="102:441"></div>
+        <p class="item--hqh" id="102:442">닉네임 변경</p>
+        <p class="item--PCj" id="102:443">비밀번호 변경</p>
+        <p class="item--s7u" id="102:444">내 작성글</p>
+        <p class="item--xQF" id="102:445">알림설정</p>
+        <div class="rectangle-nick" id="rectangle-nick"></div>
+        <div class="rectangle-id" id="rectangle-id"></div>
+        <div class="rectangle-pw" id="rectangle-pw"></div>
+        <div class="rectangle-mywrite" id="rectangle-mywrite"></div>
+        <div class="rectangle-alarm" id="rectangle-alarm"></div>
+        </div>
+        <div class="navigation-bar-GrB" id="Home">
+        <div class="segment-4-QBh" id="102:423">
+        <div class="icon-container-Lb9" id="I102:423;52031:21380">
+        </div>
+        <p class="label-text-R6o" id="I102:423;50721:10440">홈</p>
+        </div>
+        <div class="segment-2-92o" id="Shopping">
+        <p class="label-text-E4F" id="I102:424;50721:10430">쇼핑</p>
+        </div>
+        <div class="segment-3-Mef" id="House">
+        <p class="label-text-edm" id="I102:425;50721:10430">집들이</p>
+        </div>
+        <div class="segment-1-miP" id="myprofile">
+        <p class="label-text-U71" id="I102:426;50721:10455">내정보</p>
+        </div>
+        </div>
+        </div>
+    </body>
 </html>
