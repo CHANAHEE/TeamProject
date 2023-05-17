@@ -1,23 +1,8 @@
-/* 콘텐츠 블럭 타이틀 */
-.titlebox {
-    width: 90%;
-    max-width: 1240px;
-    margin: 0 auto;
-}
-
-.title {
-    width: 90%;
-    font-family: 'pretendard_bold';
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
-}
-
-
 /* 콘텐츠 블럭 */
 .container {
     width: 90%;
     max-width: 1240px;
-    margin: 0 auto;
+    margin: 1rem auto 0 auto ;
   
     display: grid;
   
@@ -59,16 +44,21 @@
     flex: 1;
     background-color: white;
 }
+
+h1{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
   
 .image {
     border-radius: 0.2em;
-    padding-bottom: 70%;
+    padding-bottom: 120%;
     background-size: cover;
     background-position: center center;
 }
   
 .card p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     flex: 1;
     line-height: 1.4;
 }

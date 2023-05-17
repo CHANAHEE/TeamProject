@@ -1,0 +1,19 @@
+.wrapper {
+    width: 90%;
+    max-width: 1240px;
+    height: 70%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    align-content: center;
+    padding-top: 1rem;
+}
+
+
+.title {
+    font-size: 1.2rem;
+    font-family: 'pretendard_bold';   
+}
+
+.count {
+    margin: 0 auto;
+}
