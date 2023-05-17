@@ -1,0 +1,59 @@
+.container {
+    width: 90%;
+    max-width: 1240px;
+    height: 70%;
+    margin: 0 auto;
+    align-content: center;
+    padding-top: 1rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-family: 'pretendard_bold';
+    margin: 0 0 2rem 1rem; 
+}
+
+.boxes {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p {
+    text-align: center;
+}
+
+.count {
+    font-size: 1.2rem;
+    font-family: 'pretendard_bold';  
+    color: #17BCE0;
+    
+}
+
+hr {
+    margin: 0.7rem 0;
+}
+
+
+li {
+    list-style-type: none;
+    margin: 0 0 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    width: 2rem;
+    text-align: right;
+}

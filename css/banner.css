@@ -1,0 +1,32 @@
+/* 배너 */
+#banner {
+    border-radius: 0.2em;
+}
+
+.slider {
+    width: 90%;
+    max-width: 1240px;
+    height: 70%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    align-content: center;
+}
+
+.box {
+    height: max-content;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.text {
+    font-size: 1.7rem;
+    font-family: 'pretendard_bold';
+    margin-bottom: 60px;
+}
+
+.sub {
+    font-size: 1rem;
+    font-family: 'pretendard_regular';
+    margin-top: 60px;
+    margin-bottom: 0.6rem;
+}
