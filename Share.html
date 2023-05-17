@@ -7,7 +7,7 @@
         <script src="./js/share.js"></script>
         <script>
             function loadItems(){
-               return fetch("http://wny2023.dothome.co.kr/ateamProject/network/loadShare.php")
+               return fetch("../network/loadShare.php")
                 .then((response) => response.json())
                 .then((data) => console.log(data));
             }
