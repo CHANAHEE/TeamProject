@@ -1,4 +1,6 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Credentials: true");
     header('Content-Type:application/json; charset=utf-8; Access-Control-Allow-Origin: *');
 
     $db=mysqli_connect('localhost','wny2023','thdek543!','wny2023');
