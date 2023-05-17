@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type:application/json; charset=utf-8');
+    header('Content-Type:application/json; charset=utf-8; Access-Control-Allow-Origin: *');
 
     $db=mysqli_connect('localhost','wny2023','thdek543!','wny2023');
     mysqli_query($db,"set names utf8");

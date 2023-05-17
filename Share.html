@@ -5,10 +5,36 @@
         <title>review_main</title>
         <link rel="stylesheet" href="./css/share.css">
         <script src="./js/share.js"></script>
+        <script>
+            function loadItems(){
+               return fetch("http://wny2023.dothome.co.kr/ateamProject/network/loadShare.php")
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+            }
+
+            loadItems().then((items) => {
+            console.log(items);
+            display(items);//화면에 출력
+            });
+
+            function display(items){
+                var review=JSON.parse(items);
+                var a="";
+                for(var i=0;i<review.length;i++){
+                    // a+=people[i].name+",";
+                    // a+=people[i].age+"<br>";
+                    a+='<div class="item"> <img src='+review[i].rimg+' alt="interior01> <p>'+review[i].title+'</p></div>';
+                }
+                document.getElementById('item_list').innerHTML=a;
+            }
+
+        </script>
     </head>
     <body>
         <main>
             <div class="container">
+                <div id="item_list">
+                </div>
                 <div class="item">
                     <img src="./image/review_img/interior01.jpg" alt="interior">
                     <p>컬렉터의 관점에서, 집을 실험하고 기록하는 싱글하우스</p>
