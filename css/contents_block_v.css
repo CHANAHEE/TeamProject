@@ -1,66 +1,3 @@
-/* 기본설정 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-a {
-    text-decoration: none;
-    color: #525252;
-}
-
-/* 폰트설정 */
-@font-face {
-    font-family: 'pretendard_regular';
-    src: url(../font/pretendard_regular.otf);
-    font-size: 1rem;
-}
-
-@font-face {
-    font-family: 'pretendard_bold';
-    src: url(../font/pretendard_bold.otf);
-}
-
-body, html {
-    line-height: 1;
-    font-family: 'pretendard_regular';
-    -webkit-font-smoothing: antialiased;
-    letter-spacing: -.4px;
-    font-size: 1rem;
-}
-
-
-/* 배너 */
-.slider {
-    width: 90%;
-    max-width: 1240px;
-    height: 70%;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    align-content: center;
-}
-
-.box {
-    height: max-content;
-    color: #fff;
-    text-align: left;
-    padding-left: 10%;
-}
-
-.text {
-    font-size: 1.7rem;
-    font-family: 'pretendard_bold';
-    margin-bottom: 60px;
-}
-
-.sub {
-    font-size: 1rem;
-    font-family: 'pretendard_regular';
-    margin-top: 60px;
-    margin-bottom: 0.6rem;
-}
-
 /* 콘텐츠 블럭 타이틀 */
 .titlebox {
     width: 90%;
@@ -71,7 +8,7 @@ body, html {
 .title {
     width: 90%;
     font-family: 'pretendard_bold';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-bottom: 1rem;
 }
 
@@ -103,6 +40,7 @@ body, html {
     /* display: flex; */
     /* flex-direction: column; */
     position: relative;
+    z-index: -1;
     top: 0;
     transition: all 0.2s ease-in-out;
     margin-bottom: 1em;
@@ -123,6 +61,7 @@ body, html {
 }
   
 .image {
+    border-radius: 0.2em;
     padding-bottom: 70%;
     background-size: cover;
     background-position: center center;
