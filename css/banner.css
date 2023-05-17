@@ -1,4 +1,8 @@
 /* 배너 */
+#banner {
+    border-radius: 0.2em;
+}
+
 .slider {
     width: 90%;
     max-width: 1240px;
@@ -10,7 +14,6 @@
 
 .box {
     height: max-content;
-    color: #fff;
     text-align: left;
     padding-left: 10%;
 }

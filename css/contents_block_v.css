@@ -8,7 +8,7 @@
 .title {
     width: 90%;
     font-family: 'pretendard_bold';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-bottom: 1rem;
 }
 
@@ -40,6 +40,7 @@
     /* display: flex; */
     /* flex-direction: column; */
     position: relative;
+    z-index: -1;
     top: 0;
     transition: all 0.2s ease-in-out;
     margin-bottom: 1em;
@@ -60,6 +61,7 @@
 }
   
 .image {
+    border-radius: 0.2em;
     padding-bottom: 70%;
     background-size: cover;
     background-position: center center;
