@@ -1,627 +1,231 @@
-@font-face{
-    font-family: "regularFont";
-    src: url("../font/pretendard_regular.otf");
-  }
-  @font-face{
-    font-family: "boldFont";
-    src: url("../font/pretendard_bold.otf");
-  }
-*{
-    margin: 0;
-    padding: 0;
+
+@media all and (max-width: 1240px){
+    #edit{
+        visibility: collapse;
+    }
 }
-  @media all and (max-width: 767px){
-    body{
-        font-family: "regularFont",sans-serif;
-    }
-    header{
-        width: 100%;
-        position: fixed;
-        z-index: 2;
-        display: flex;
-    }
 
-    #forBorder{
-        background-color: rgb(145, 61, 61);  
-        border-bottom: 1px solid rgb(226, 226, 226);
-        
-        position: fixed;
-        z-index: 2;
-        display: flex;
-        width: 100%;
-        padding-bottom: 15px;
-    }
+.container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+}
+.container>div,nav{
+    height: 5.5rem;
+    align-items: center;
+}
+#logo_container {
+    display: flex;
+    justify-content: center; /* 가운데 정렬을 위한 추가 */
+    width: 100%;
+}
 
-    #header{
-        display: flex;
-        margin: 20px auto 0px auto;
-        position: fixed;
-        z-index: 2;
-        width: 50%;
-    }
-    #logo{
-        display: flex;
-        margin-left: 260px;
-    }
-    #logo a{
-        color: #000;
-        text-decoration: none;
-        align-self: center;
-        font-family: "boldFont",sans-serif;
-        font-size: xx-large;
-    }
-    #login {
-        margin-top: 2px;
-        margin-left: auto;
-    }
+#logo {
+    color: #000;
+    text-decoration: none;
+    font-family: "pretendard_bold", sans-serif;
+    font-size: xx-large;
+    z-index: 3;
+}
 
-    #login ul{
-        flex-grow: 10;
-        display: flex;
-        
-    }
+#edit{
+    display: flex;
+    margin-left: auto;
+    width: 10%;
+}
 
-    #login ul li {
-        display: flex;
-        margin-right: 25px;
-        margin-top: 11px;
-    }
+#edit button{
+    border: 0px;
+    height: 40px;
+    background-color: #17BCE0;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-width: 100px;
+    margin-left: auto;
+    margin-top: 5px;
+}
 
-    #login ul a {
-        text-decoration: none;
-        color: black;
-    }
-    #login ul *:hover{
-        color: #0f809a;
-    }
-    #edit{
-        display: flex;
-        margin-left: 0px;
-    }
+#edit button:hover{
+    background-color: #107c95;
+    color: rgb(208, 208, 208);
+}
+
+section{
+    height: 100%;
+    display: flex;
+}
+
+section div{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    margin-top: 180px;
+}
+
+footer{
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* 햄버거 메뉴 */
+/* 체크박스 이미지 삭제 */
+
+input[id="menuicon"] {
+    display: none;
+}
+
+/* 햄버거 메뉴 전체 레이아웃 */
+input[id="menuicon"] + label {
+    display: block;
     
-    #edit button{
-        border: 0px;
-        height: 40px;
-        background-color: #17BCE0;
-        color: white;
-        border-radius: 4px;
-        padding: 5px 20px;
-        margin-left: auto;
-        margin-top: 5px;
-    }
-    #edit button:hover{
-        background-color: #107c95;
-        color: rgb(208, 208, 208);
-    }
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* 햄버거 메뉴 각 줄 모양 */
+input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background:#606060;
+    transition:all .35s;
+}
+
+
+
+input[id="menuicon"] + label span:nth-child(1) {
+    top:0;
+}
+input[id="menuicon"] + label span:nth-child(2) {
+    top:50%;
+    transform: translateY(-50%);
+}
+input[id="menuicon"] + label span:nth-child(3) {
+    bottom: 0;
+}
+
+
+/* 클릭시 X 모양으로 변환 */
+input[id="menuicon"]:checked + label {z-index:3;}
+input[id="menuicon"]:checked + label span {background:#421b1b;}
+
+input[id="menuicon"]:checked + label span:nth-child(1){
+    top:50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked + label span:nth-child(2){
+    opacity: 0;
+}
+input[id="menuicon"]:checked + label span:nth-child(3){
+    top:50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* 드로우어(서랍) 메뉴 */
+div[class="sidebar"] {
+    width: 380px;
+    height: 100%;
+    background:rgb(255, 255, 255);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -380px;
+    z-index: 5;
+    transition: all .35s;
+    border-right: 1px solid rgb(219, 219, 219);
+}
+input[id="menuicon"]:checked + label + div {
+    left: 0px;
+}
+
+
+
+
+/* 사이드 메뉴  */
+#login_container{
+    display: flex;
+    margin-bottom: 70px;
+}
+#login_container #login_drawer{
+    margin-left: auto;
+}
+#login_drawer button{
+    width: 140px;
+    height: 40px;
+    border: 0px;
+    background-color: #17BCE0;
+    color: white;
+}
+#login_drawer button:hover{
+    background-color: #1888a1;
+    color: rgb(211, 211, 211);
+}
+#signup_drawer button{
+    width: 140px;
+    height: 40px;
+    border: 1px solid #17BCE0;
+    color: #17BCE0;
+    background-color: white;
+}
+#signup_drawer button:hover{
+    color: #0f809a;
+    background-color: rgb(210, 210, 210);
+}
+.menu {
+    margin: 0 35px;
+    margin-top: 80px;
+    width: 80%;
+    height: 80%;
+    /* border: 1px dashed; */
+    color: #000000;
+}
+.category_list{
+    list-style:none;
+    margin:0; 
+    padding:0;
+    font-size: 1.2em;
+    font-weight: 550;
+    margin-top: 0.5em;
+
+}
+
+.sub_category_list{
+    list-style:none;
+    margin:0;
+    padding:2;
+    padding-left: 25;
+    font-size: 0.8em;
     
-    section{
-        height: 100%;
-        display: flex;
-    }
+}
 
-    section div{
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: 100%;
-        margin-top: 180px;
-    }
-
-    footer{
-        position: fixed;
-        border-top: 1px solid rgb(226, 226, 226);
-        z-index: 1;
-    }
+.side_list{
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     
-    footer div p{
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    /* 햄버거 메뉴 */
-    /* 체크박스 이미지 삭제 */
-    #menuicon{
-        display: none;
-    }
-    input[id="menuicon"] {
-        display: none;
-    }
-
-    /* 햄버거 메뉴 전체 레이아웃 */
-    input[id="menuicon"] + label {
-        display: block;
-        width: 30px;
-        height: 25px;
-        position: relative;
-        cursor: pointer;
-        margin-left: 20px;
-    }
-
-    /* 햄버거 메뉴 각 줄 모양 */
-    input[id="menuicon"] + label span {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-        background:#606060;
-        transition:all .35s;
-    }
-
-    input[id="menuicon"] + label span:nth-child(1) {
-        top:0;
-    }
-    input[id="menuicon"] + label span:nth-child(2) {
-        top:50%;
-        transform: translateY(-50%);
-    }
-    input[id="menuicon"] + label span:nth-child(3) {
-        bottom: 0;
-    }
-
-    /* 클릭시 X 모양으로 변환 */
-    input[id="menuicon"]:checked + label {z-index:3;}
-    input[id="menuicon"]:checked + label span {background:#421b1b;}
-
-    input[id="menuicon"]:checked + label span:nth-child(1){
-        top:50%;
-        transform: translateY(-50%) rotate(45deg);
-    }
-    input[id="menuicon"]:checked + label span:nth-child(2){
-        opacity: 0;
-    }
-    input[id="menuicon"]:checked + label span:nth-child(3){
-        top:50%;
-        transform: translateY(-50%) rotate(-45deg);
-    }
-
-    /* 드로우어(서랍) 메뉴 */
-    div[class="sidebar"] {
-        width: 380px;
-        height: 100%;
-        background:rgb(255, 255, 255);
-        background-color: white;
-        position: fixed;
-        top: 0;
-        left: -380px;
-        z-index: 2;
-        transition: all .35s;
-        border-right: 1px solid rgb(219, 219, 219);
-    }
-    input[id="menuicon"]:checked + label + div {
-        left: 0px;
-
-    }
-    
-    
-
-
-    /* 사이드 메뉴  */
-    #login_container{
-        display: flex;
-        margin-bottom: 70px;
-    }
-    #login_container #login_drawer{
-        margin-left: auto;
-    }
-    #login_drawer button{
-        width: 140px;
-        height: 40px;
-        border: 0px;
-        background-color: #17BCE0;
-        color: white;
-    }
-    #login_drawer button:hover{
-        background-color: #1888a1;
-        color: rgb(211, 211, 211);
-    }
-    #signup_drawer button{
-        width: 140px;
-        height: 40px;
-        border: 1px solid #17BCE0;
-        color: #17BCE0;
-        background-color: white;
-    }
-    #signup_drawer button:hover{
-        color: #0f809a;
-        background-color: rgb(210, 210, 210);
-    }
-    .menu {
-        margin:40px;
-        margin-top: 80px;
-        width: 80%;
-        height: 80%;
-        /* border: 1px dashed; */
-        color: #000000;
-    }
-    .category_list{
-        list-style:none;
-        margin:0; 
-        padding:0;
-        font-size: 1.2em;
-        font-weight: 550;
-        margin-top: 0.5em;
-
-    }
-
-    .sub_category_list{
-        list-style:none;
-        margin:0;
-        padding:2;
-        padding-left: 25;
-        font-size: 0.8em;
-        
-    }
-
-    .side_list{
-        border-bottom: 1px solid rgb(184, 184, 184);
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        
-    }
-    .h4main{
-        margin-bottom: 1em;
-    }
-    .h4main:hover{
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    .side_list:hover {
-        color: #949494;
-        border-bottom: 1px solid #d6d6d6;
-        cursor: pointer;
-    }   
-  }
-
-  @media all and (max-width: 1024px){
-    body{
-        font-family: "regularFont",sans-serif;
-    }
-    header{
-        position: fixed;
-        border-bottom: 1px solid rgb(226, 226, 226);
-    }
-    #header{
-        display: flex;
-        margin: 20px 400px 0px 400px;
-    }
-    #logo{
-        margin-right: 100px;
-    }
-    #menu {
-        align-self: center;
-    }
-    #menu ul{
-        flex-grow: 1;
-        display: flex;
-    }
-    #menu ul li{
-        display: flex;
-        margin-right: 40px;
-        font-family: "boldFont",sans-serif;
-        font-size: 25px;
-    }
-    #login {
-        margin-left: auto;
-        margin-top: 2px;
-    }
-    #login ul{
-        flex-grow: 10;
-        display: flex;
-        
-    }
-    #login ul li {
-        display: flex;
-        margin-right: 25px;
-        margin-top: 5px;
-    }
-    #login ul a {
-        text-decoration: none;
-        color: black;
-    }
-    #edit{
-        margin-left: 0px;
-        margin-top: 2px;
-    }
-    #edit button{
-        border: 0px;
-        background-color: rgb(29, 146, 255);
-        color: white;
-        border-radius: 4px;
-        padding: 5px 20px;
-    }
-    section{
-        height: 1000px;
-        display: flex;
-    }
-
-    section div{
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    footer{
-        border-top: 1px solid rgb(226, 226, 226);
-    }
-    footer div p{
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-  }
-  @media all and (max-width: 1400px){
-
-    
-  }
-  @media all and (min-width: 1400px){
-    body{
-        font-family: "regularFont",sans-serif;
-    }
-    header{
-        
-        position: fixed;
-        z-index: 10;
-        display: flex;
-        width: 100%;
-    }
-
-    #forBorder{
-        width: 1240px;
-        border-bottom: 1px solid rgb(226, 226, 226);
-        position: fixed;
-        z-index: 2;
-        display: flex;
-        width: 100%;
-        padding-bottom: 15px;
-    }
-
-    #header{
-        display: flex;
-        margin: 20px auto 0px auto;
-        width: 1240px;
-    }
-    #logo{
-        color: #000;
-        text-decoration: none;
-        font-family: "boldFont",sans-serif;
-        font-size: xx-large;
-        z-index: 3;
-        width: 600px;
-        margin: 0 200px;
-        padding-right: 55px;
-        text-align: right;
-    }
-    #login {
-        margin-top: 2px;
-        margin-left: auto;
-        width: 20%;
-    }
-
-    #login ul{
-        flex-grow: 10;
-        display: flex;
-        
-    }
-
-    #login ul li {
-        display: flex;
-        margin-right: 25px;
-        margin-top: 11px;
-    }
-
-    #login ul a {
-        text-decoration: none;
-        color: black;
-    }
-    #login ul *:hover{
-        color: #0f809a;
-    }
-    #edit{
-        display: flex;
-        margin-left: 0px;
-        width: 10%;
-    }
-    
-    #edit button{
-        border: 0px;
-        height: 40px;
-        background-color: #17BCE0;
-        color: white;
-        border-radius: 4px;
-        padding: 5px 20px;
-        margin-left: auto;
-        margin-top: 5px;
-    }
-    #edit button:hover{
-        background-color: #107c95;
-        color: rgb(208, 208, 208);
-    }
-    
-    section{
-        height: 100%;
-        display: flex;
-    }
-
-    section div{
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: 100%;
-        margin-top: 180px;
-    }
-
-    footer{
-        border-top: 1px solid rgb(226, 226, 226);
-        
-        width: 100%;
-        position: fixed;
-        z-index: 0;
-        height: 100%;
-    }
-    
-    footer div p{
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    /* 햄버거 메뉴 */
-    /* 체크박스 이미지 삭제 */
-    #menuicon{
-        display: none;
-    }
-    input[id="menuicon"] {
-        display: none;
-    }
-
-    /* 햄버거 메뉴 전체 레이아웃 */
-    input[id="menuicon"] + label {
-        display: block;
-        width: 30px;
-        height: 25px;
-        position: relative;
-        cursor: pointer;
-        margin-left: 20px;
-    }
-
-    /* 햄버거 메뉴 각 줄 모양 */
-    input[id="menuicon"] + label span {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-        background:#606060;
-        transition:all .35s;
-    }
-
-    
-
-    input[id="menuicon"] + label span:nth-child(1) {
-        top:0;
-    }
-    input[id="menuicon"] + label span:nth-child(2) {
-        top:50%;
-        transform: translateY(-50%);
-    }
-    input[id="menuicon"] + label span:nth-child(3) {
-        bottom: 0;
-    }
-
-
-    /* 클릭시 X 모양으로 변환 */
-    input[id="menuicon"]:checked + label {z-index:3;}
-    input[id="menuicon"]:checked + label span {background:#421b1b;}
-
-    input[id="menuicon"]:checked + label span:nth-child(1){
-        top:50%;
-        transform: translateY(-50%) rotate(45deg);
-    }
-    input[id="menuicon"]:checked + label span:nth-child(2){
-        opacity: 0;
-    }
-    input[id="menuicon"]:checked + label span:nth-child(3){
-        top:50%;
-        transform: translateY(-50%) rotate(-45deg);
-    }
-
-    /* 드로우어(서랍) 메뉴 */
-    div[class="sidebar"] {
-        width: 380px;
-        height: 100%;
-        background:rgb(255, 255, 255);
-        background-color: white;
-        position: fixed;
-        top: 0;
-        left: -380px;
-        z-index: 3;
-        transition: all .35s;
-        border-right: 1px solid rgb(219, 219, 219);
-    }
-    input[id="menuicon"]:checked + label + div {
-        left: 0px;
-    }
-    
-    
-
-
-    /* 사이드 메뉴  */
-    #login_container{
-        display: flex;
-        margin-bottom: 70px;
-    }
-    #login_container #login_drawer{
-        margin-left: auto;
-    }
-    #login_drawer button{
-        width: 140px;
-        height: 40px;
-        border: 0px;
-        background-color: #17BCE0;
-        color: white;
-    }
-    #login_drawer button:hover{
-        background-color: #1888a1;
-        color: rgb(211, 211, 211);
-    }
-    #signup_drawer button{
-        width: 140px;
-        height: 40px;
-        border: 1px solid #17BCE0;
-        color: #17BCE0;
-        background-color: white;
-    }
-    #signup_drawer button:hover{
-        color: #0f809a;
-        background-color: rgb(210, 210, 210);
-    }
-    .menu {
-        margin:40px;
-        margin-top: 80px;
-        width: 80%;
-        height: 80%;
-        /* border: 1px dashed; */
-        color: #000000;
-    }
-    .category_list{
-        list-style:none;
-        margin:0; 
-        padding:0;
-        font-size: 1.2em;
-        font-weight: 550;
-        margin-top: 0.5em;
-
-    }
-
-    .sub_category_list{
-        list-style:none;
-        margin:0;
-        padding:2;
-        padding-left: 25;
-        font-size: 0.8em;
-        
-    }
-
-    .side_list{
-        border-bottom: 1px solid rgb(184, 184, 184);
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        
-    }
-    .h4main{
-        margin-bottom: 1em;
-    }
-    .h4main:hover{
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    .side_list:hover {
-        color: #949494;
-        border-bottom: 1px solid #d6d6d6;
-        cursor: pointer;
-    }   
-
-  }
-
-  
+}
+.h4main{
+    margin-bottom: 1em;
+}
+.h4main:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.side_list:hover {
+    color: #949494;
+    cursor: pointer;
+} 
