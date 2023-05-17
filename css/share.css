@@ -15,7 +15,7 @@ p{text-align: justify;}
 }
 .item {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     /* align-content: flex-start; */
     width: 45%;
     height: 50%;
