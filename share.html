@@ -3,71 +3,45 @@
     <head>
         <meta charset="utf-8">
         <title>review_main</title>
-        <style>
-            /* font설정 */
-            @font-face {
-                font-family: "MyFont";
-                src: url("./font/pretendard_bold.otf");
-            }
-            p{font-family: "MyFont", sans-serif;}
-            p{text-align: justify;}
-
-            /* div설정 */
-            .item img{
-                width: 100%;
-                height: 100%;
-            }
-            .item {
-                display: flex;
-                flex-direction: column;
-                /* align-content: flex-start; */
-                width: 45%;
-                height: 50%;
-                margin: 20px;
-            }
-            .container {
-                display: flex;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-            }
-
-            /* floating 버튼 메뉴 */
-            .floating{
-                position: fixed;
-                width: 80px;
-                height: 80px;
-                bottom: 60px;
-                right: 60px;
-                border-radius: 50%;
-                background-color: pink;
-                box-shadow: 2px 2px 3px #999;
-                border: 0px;
-            }
-            .floating:hover, .floating:focus {
-                background-color: tomato;
-            }
-            #buttonimg{
-                width: 30px;
-                height: 30px;
-                align-self: center;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="./css/share.css">
+        <script src="./js/share.js"></script>
         <script>
-            function toWrite(){
-                var ask=confirm("리뷰를 쓰러갑니다.");
-                if(ask){
-                    window.location.href="./Share_write.html"
-                }else{
-                    window.location.href="./Share.html"
-                }
-            }
-        </script>
+            // function loadItems(){
+            //    return fetch("../network/loadShare.php")
+            //     .then((response) => response.json())
+            //     .then((data) => console.log(data));
+            // }
 
+            function loadItems(){
+                fetch ('./network/loadShare.php').then((response) => response.json())
+                    .then((data) => console.log(data[0].title));
+            }
+
+            // loadItems();
+
+
+
+            // loadItems().then((items) => {
+            // console.log(items);
+            // display(items);//화면에 출력
+            // });
+
+            // function display(items){
+            //     var review=JSON.parse(items);
+            //     var a="";
+            //     for(var i=0;i<review.length;i++){
+            //         a+='<div class="item"> <img src='+review[i].rimg+' alt="interior01> <p>'+review[i].title+'</p></div>';
+            //     }
+            //     document.getElementById('item_list').innerHTML=a;
+            // }
+
+        </script>
     </head>
-    <body>
+    <body onload="loadItems()">
         <main>
             <div class="container">
+                <div id="item_list">
+                </div>
                 <div class="item">
                     <img src="./image/review_img/interior01.jpg" alt="interior">
                     <p>컬렉터의 관점에서, 집을 실험하고 기록하는 싱글하우스</p>
@@ -167,8 +141,8 @@
                     </p>
                 </div>
             </div>
-            <button class="floating" href="./Share_write.html" onclick="toWrite()">
-                <img id="buttonimg" src="./image/addshare02.png" alt="reviewadd_icon">
+            <button class="floating" href="./share_write.html" onclick="toWrite()">
+                <img id="buttonimg" src="./image/floatingBtn.png" alt="reviewadd_icon">
             </button>
         </main>
     </body>
