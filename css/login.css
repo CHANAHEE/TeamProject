@@ -37,37 +37,32 @@
     #info{
         display: flex;
         justify-content: center;
-        margin-top: 50px;
+        margin-top: 260px;
     }
     #id{
         width: 250px;
         height: 40px;
         border: 1px solid rgb(194, 194, 194);
-        border-bottom: 0px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-radius: 3px;
     }
     #id::placeholder{
         color: rgb(192, 192, 192);
         padding-left: 10px;
-        font-weight: bold;
-        font-size: medium;
+        font-size: 14px;
     }
     /* https://play.google.com/store/games?hl=ko */
     #password{
         width: 250px;
         height: 40px;
         border: 1px solid rgb(194, 194, 194);
-        
+        margin-top: 10px;
         margin-bottom: 10px;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
+        border-radius: 3px;
     }
     #password::placeholder{
         color: rgb(192, 192, 192);
         padding-left: 10px;
-        font-weight: bold;
-        font-size: medium;
+        font-size: 14px;
     }
     #info #loginButton{
         display: flex;
@@ -79,6 +74,7 @@
         height: 50px;
         border: 1px solid rgb(24, 182, 255);
         border-radius: 3px;
+        margin-top: 20px;
         background-color: white;
         font-weight: 1000;
         font-size: 20px;
@@ -89,8 +85,6 @@
         display: flex;
         justify-content: center;
         margin-top: 20px;
-        
-        
     }
     .caption a{
         color: rgb(129, 129, 129);
@@ -103,11 +97,16 @@
     }
     #passInit{
         display: inline-block;
-        background-color: aqua;
     }
 
     #signUp{
+        margin-top: 20px;
+    }
+    #signUp *{
         display: inline-block;
-        background-color: aqua;
+        font-size: 10px;
+    }
+    #signUp a{
+        color: rgb(152, 154, 154);
     }
   }
