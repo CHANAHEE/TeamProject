@@ -1,0 +1,152 @@
+/* share.html css */
+/* ------------------------------------------------------- */
+/* 기본설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+a {
+    text-decoration: none;
+    color: #525252;
+}
+
+/* 폰트설정 */
+@font-face {
+    font-family: 'pretendard_regular';
+    src: url(../font/pretendard_regular.otf);
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'pretendard_bold';
+    src: url(../font/pretendard_bold.otf);
+}
+
+body, html {
+    line-height: 1;
+    font-family: 'pretendard_regular','Gill Sans',sans-serif ;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.4px;
+    font-size: 1rem;
+}
+
+hr {
+    background: #D9D9D9;
+    height:1px;
+    border:0;
+}
+
+/* floating 버튼 메뉴 */
+.floating{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    bottom: 60px;
+    right: 60px;
+    border-radius: 20%;
+    background-color: skyblue;
+    box-shadow: 2px 2px 3px #999;
+    border: 0px;
+}
+.floating:hover, .floating:focus {
+    background-color: steelblue;
+}
+#buttonimg{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+}
+
+/* 콘텐츠 블럭 */
+.container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 1rem auto 0 auto ;
+  
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+  
+/* 데스크탑일때 4컬럼*/
+@media screen and (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+}
+  
+.card {
+    min-height: 100%;
+    background: #EEE;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* display: flex; */
+    /* flex-direction: column; */
+    position: relative;
+    z-index: -1;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1em;
+}
+  
+/* .card:hover {
+    top: -3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+} */
+  
+.card article {
+    padding: 1rem 0.5rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: space-between;
+    flex: 1;
+    background-color: white;
+}
+
+h1{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+  
+.image {
+    border-radius: 0.2em;
+    padding-bottom: 120%;
+    background-size: cover;
+    background-position: center center;
+}
+  
+.card p {
+    font-size: 0.8rem;
+    flex: 1;
+    line-height: 1.4;
+    font-family: "MyFont", sans-serif;
+}
+
+/* share_write.html css */
+/* ------------------------------------------------------- */
+#profile{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+/* 미리보기 이미지 사이즈조정 */
+#preview {
+    width: 50%;
+    height: 50%;
+}
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.itemw {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: baseline;
+    flex-wrap: wrap;
+    max-width: 50%;
+}

@@ -1,0 +1,18 @@
+.fab{
+    position: fixed;
+    top: 83%;
+    right: 5%;
+
+    z-index: 99;
+}
+
+.fab img {
+    width: 5rem;
+}
+
+  /* 데스크탑일때 fab 없애기*/
+@media screen and (min-width: 1024px) {
+    .fab{
+        visibility: hidden;
+      }
+}
