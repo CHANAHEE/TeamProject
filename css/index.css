@@ -6,22 +6,27 @@
     font-family: "boldFont";
     src: url("../font/pretendard_bold.otf");
   }
-
+*{
+    margin: 0;
+    padding: 0;
+}
   @media all and (max-width: 767px){
     body{
         font-family: "regularFont",sans-serif;
     }
     header{
         width: 100%;
-        
         position: fixed;
+        z-index: 2;
         display: flex;
     }
 
     #forBorder{
-        background-color: white;  
+        background-color: rgb(145, 61, 61);  
         border-bottom: 1px solid rgb(226, 226, 226);
+        
         position: fixed;
+        z-index: 2;
         display: flex;
         width: 100%;
         padding-bottom: 15px;
@@ -30,6 +35,8 @@
     #header{
         display: flex;
         margin: 20px auto 0px auto;
+        position: fixed;
+        z-index: 2;
         width: 50%;
     }
     #logo{
@@ -102,9 +109,8 @@
     }
 
     footer{
-        position: inherit;
+        position: fixed;
         border-top: 1px solid rgb(226, 226, 226);
-        background-color: red;
         z-index: 1;
     }
     
@@ -353,16 +359,18 @@
         font-family: "regularFont",sans-serif;
     }
     header{
-        width: 100%;
         
         position: fixed;
+        z-index: 10;
         display: flex;
+        width: 100%;
     }
 
     #forBorder{
-        background-color: white;  
+        width: 1240px;
         border-bottom: 1px solid rgb(226, 226, 226);
         position: fixed;
+        z-index: 2;
         display: flex;
         width: 100%;
         padding-bottom: 15px;
@@ -371,22 +379,23 @@
     #header{
         display: flex;
         margin: 20px auto 0px auto;
-        width: 50%;
+        width: 1240px;
     }
     #logo{
-        display: flex;
-        margin-left: 260px;
-    }
-    #logo a{
         color: #000;
         text-decoration: none;
-        align-self: center;
         font-family: "boldFont",sans-serif;
         font-size: xx-large;
+        z-index: 3;
+        width: 600px;
+        margin: 0 200px;
+        padding-right: 55px;
+        text-align: right;
     }
     #login {
         margin-top: 2px;
         margin-left: auto;
+        width: 20%;
     }
 
     #login ul{
@@ -411,6 +420,7 @@
     #edit{
         display: flex;
         margin-left: 0px;
+        width: 10%;
     }
     
     #edit button{
@@ -443,10 +453,12 @@
     }
 
     footer{
-        position: inherit;
         border-top: 1px solid rgb(226, 226, 226);
-        background-color: red;
-        z-index: 1;
+        
+        width: 100%;
+        position: fixed;
+        z-index: 0;
+        height: 100%;
     }
     
     footer div p{
@@ -484,6 +496,8 @@
         transition:all .35s;
     }
 
+    
+
     input[id="menuicon"] + label span:nth-child(1) {
         top:0;
     }
@@ -494,6 +508,7 @@
     input[id="menuicon"] + label span:nth-child(3) {
         bottom: 0;
     }
+
 
     /* 클릭시 X 모양으로 변환 */
     input[id="menuicon"]:checked + label {z-index:3;}
@@ -520,13 +535,12 @@
         position: fixed;
         top: 0;
         left: -380px;
-        z-index: 2;
+        z-index: 3;
         transition: all .35s;
         border-right: 1px solid rgb(219, 219, 219);
     }
     input[id="menuicon"]:checked + label + div {
         left: 0px;
-
     }
     
     
