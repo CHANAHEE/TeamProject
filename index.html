@@ -10,34 +10,33 @@
     <link rel="stylesheet" href="./css/setting.css">
 
   </head>
-  <body>
-    <h1>안녕하세요</h1>
+  <body onload="openHome()" id="super">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <div class="container" id="logo_container">
+    
+    <div class="logo_container" id="logo_container">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="navbar-collapse  w-100 order-1 order-md-0 ">
             <input type="checkbox" id="menuicon">
-            <label for="menuicon" id="bb">
+            <label for="menuicon" id="menuicon_label">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-            <div class="sidebar" id="cc">
-                <div class="menu">
+            <div class="sidebar" id="sidebar">
+                <div id="menu">
                     <div id="close"><img src="./image/close.png" alt="" width="20px" ></div>
                     <div id="login_container">
-                      <a href="" id="signup_drawer"><button>회원가입</button></a>
-                      <a href="./Login.html" id="login_drawer"><button>로그인</button></a>
+                      <a href="./join.html" id="signup_drawer"><button>회원가입</button></a>
+                      <a href="./login.html" id="login_drawer"><button>로그인</button></a>
                     </div>
                     <div class="side_list" onclick="openHome()">홈 </div>
                     <hr>
-                    <div class="side_list">쇼핑</div>
+                    <div class="side_list" onclick="openShop()">쇼핑</div>
                     <hr>
                     <div class="side_list" onclick="openShare()">집들이</div>
                     <hr>
-                    <div class="side_list">내 쇼핑</div>
+                    <div class="side_list" onclick="openOrder()">내 쇼핑</div>
                     <hr>
                 </div>
             </div>
@@ -45,7 +44,7 @@
       </nav>
 
       <!-- 이미지 요소 넣기 -->
-      <div id="logo_container"><a href="./index.html" id="logo">두 루 마 리</a></div>
+      <div id="title_container"><a href="./index.html" id="logo">두 루 마 리</a></div>
       
 
 
@@ -59,15 +58,20 @@
     </div>
     <hr>
 
-    <section >
-      <div id="target"></div>
+    <section id="section">
+      <div id="target">
+        
+      </div>
     </section>
-    
     <hr>
       
     <div id="footer_container">
-      <footer>
-        이곳은 푸터 입니다.
+      <footer id="footer">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid odit. Veniam ad velit asperiores, quo deserunt minima fuga cumque dolorum voluptates, fugit magni culpa eaque, recusandae excepturi aspernatur aliquam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid odit. Veniam ad velit asperiores, quo deserunt minima fuga cumque dolorum voluptates, fugit magni culpa eaque, recusandae excepturi aspernatur aliquam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid odit. Veniam ad velit asperiores, quo deserunt minima fuga cumque dolorum voluptates, fugit magni culpa eaque, recusandae excepturi aspernatur aliquam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid odit. Veniam ad velit asperiores, quo deserunt minima fuga cumque dolorum voluptates, fugit magni culpa eaque, recusandae excepturi aspernatur aliquam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid odit. Veniam ad velit asperiores, quo deserunt minima fuga cumque dolorum voluptates, fugit magni culpa eaque, recusandae excepturi aspernatur aliquam!
       </footer>
     </div>
     
@@ -80,6 +84,9 @@
         fetch ('./home.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
+                      var scriptElement = document.createElement('script');
+                      scriptElement.src = './js/contents_block_v.js';
+                      target.appendChild(scriptElement);
                     });
          
       }          
@@ -100,38 +107,51 @@
                     });
       }
 
-      function openShare(){
+      function openShop(){
         var target = document.getElementById('target');
-        fetch ('./share.html').then((response) => response.text())
+        fetch ('./shop.html').then((response) => response.text())
+                    .then((data) => {
+                      target.innerHTML = data
+                      var scriptElement = document.createElement('script');
+                      scriptElement.src = './js/contents_block_v.js';
+                      target.appendChild(scriptElement);
+                    });
+      }
+
+      function openOrder(){
+        var target = document.getElementById('target');
+        fetch ('./order.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
                     });
       }
-      function login(){
-        
-      }
       
       var menuicon = document.getElementById('menuicon');
       menuicon.onclick = function(){
-        document.getElementById('cc').style.left = "0px";
+        document.getElementById('sidebar').style.left = "0px";
         document.getElementById('super').style.backgroundColor = "#888888";
+        document.getElementById('section').style.opacity = 0.4;
+        document.getElementById('title_container').style.opacity = 0.4;
+        document.getElementById('title_container').style.backgroundColor = "#888888";
         document.getElementById('logo_container').style.backgroundColor = "#888888";
         document.getElementById('edit_button').style.backgroundColor = "#999999";
         document.getElementById('edit_button').style.color = "#777777 "
-        document.getElementById('bb').style.color = "#888888"
-        document.getElementById('bb').style.visibility = "hidden"
+        document.getElementById('menuicon_label').style.visibility = "hidden"
         
    
       }
       var close = document.getElementById('close')
       close.onclick = function(){
-        document.getElementById('cc').style.left = "-380px";
-        document.getElementById('super').style.backgroundColor = "white";
-        document.getElementById('logo_container').style.backgroundColor = "white";
+        document.getElementById('sidebar').style.left = "-380px";
+        document.getElementById('super').style.backgroundColor = "transparent";
+        document.getElementById('section').style.opacity = 1;
+        document.getElementById('title_container').style.opacity = 1;
+        document.getElementById('title_container').style.backgroundColor = "transparent";
+        document.getElementById('logo_container').style.backgroundColor = "transparent";
         document.getElementById('edit_button').style.backgroundColor = "#17BCE0";
         document.getElementById('edit_button').style.color = "white"
-        document.getElementById('bb').style.visibility = "visible"
-        document.getElementById('bb').checked = false
+        document.getElementById('menuicon_label').style.visibility = "visible"
+        document.getElementById('menuicon_label').checked = false
       }
 
       
