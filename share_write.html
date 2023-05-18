@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>share_write</title>
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>review_write</title>
+        <link rel="stylesheet" href="./css/share.css">
+        <script src="./js/share.js"></script>
+    </head>
+    <body>
+        <div class="container_main">
+            <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
+                <div class="input_container">
+                    <div class="item">
+                        <img id="profile" src="./image/profile/profile02.png" alt="profile">
+                        <p id="name">김마리씨</p>
+                    </div>
+                    <div class="itemw">
+                        <input type="file" name="rimg" id="rimg" accept="image/*" onchange="setThumbnail(this);"/>             
+                    </div>
+                    <div class="itemw">
+                        <img id="preview" alt="올릴파일">
+                    </div>
+                    <div class="itemw">
+                        <input type="text" name="title" id="title"/>
+                    </div>
+                    <div class="itemw">
+                        <input type="text" name="review" id="review"/>
+                    </div>
+                    <div class="itemw">
+                        <input type="submit" value="리뷰등록"/>
+                    </div>
+                </div>
+                <div></div>
 
-    <div class="container">
-
-        <div class="imagebox">
-            <img src="./image/icon/icon_camera.svg" alt="">
-            <p>이미지 추가하기</p>
+            </form>
         </div>
-
-        <div class="textbox">
-            <input type="text" placeholder="제목" required>
-        <textarea class="form-control" rows="10" placeholder="내용을 입력해주세요." required></textarea>
-        <button>작성완료</button>
-        </div>
-    
-    </div>
-
-    
-    <link rel="stylesheet" type="text/css" href="./css/setting.css">
-    <link rel="stylesheet" type="text/css" href="./css/input_colum.css">
-
-</body>
+        
+        
+    </body>
 </html>
