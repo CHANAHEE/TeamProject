@@ -6,7 +6,7 @@
     $db=mysqli_connect('localhost','wny2023','thdek543!','wny2023');
     mysqli_query($db,"set names utf8");
 
-    $sql="SELECT id,pimg,rimg,title,date FROM teamprojectShare";
+    $sql="SELECT no,id,pimg,rimg,title,date FROM teamprojectShare";
     $result=mysqli_query($db,$sql);
   
     //결과표로부터 총 레코드 수 알아내기

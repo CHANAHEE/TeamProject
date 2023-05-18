@@ -1,4 +1,5 @@
 
+
 @media all and (max-width: 1240px){
     #edit{
         visibility: collapse;
@@ -238,3 +239,4 @@ div[class="sidebar"] {
     color: #949494;
     cursor: pointer;
 } 
+
