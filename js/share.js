@@ -27,9 +27,10 @@ function loadItems(){
             var wbox=document.createElement('a');
             conshell.appendChild(wbox);
             var index=""+review[i].no;
-            var str3="./share_detail.html?id="+index;
-            wbox.setAttribute('href',str3);
-            console.log(index);
+            var str3="loadReview("+index+")";
+            wbox.setAttribute('href',"#");
+            wbox.setAttribute('onclick',str3)
+            console.log(str3);
             wbox.setAttribute('id',index);
 
             //div box 노드 생성
@@ -76,6 +77,14 @@ function loadItems(){
 
         };
     });
+}
+
+//share_detail.html의 js
+//-------------------------------------------------------------
+//a 로 전달된 값 GET방식으로 받기
+function loadReview(){
+    var num= Integer.parseInt(request.getParameter("no"));
+    console.log(num);
 }
 
 // share_write.html의 js
