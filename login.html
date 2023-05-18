@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>내일의 집</title>
-        <link rel="stylesheet" href="./css/login.css?ver=1">
-    </head>
-    <body>
-        <section class="login">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>share_write</title>
+</head>
+<body>
 
-            <div id="info">
-                <form action="">
-                    <div class="info">
-                        <input type="email" name="id" id="id" placeholder="이메일 아이디" autocomplete="off" required>
-                    </div>
-                    <div class="info">
-                        <input type="password" name="password" id="password" placeholder="비밀번호" autocomplete="off" required>
-                    </div>
-                    <div id="loginButton">
-                        <button type="submit">로그인</button>
-                    </div>
-                </form>
-            </div>
-            <div id="option">
-                <div id="signUp">
-                    <p>아직 계정이 없다면?</p>
-                    <a href="">이메일로 회원가입</a>
-                </div>
-            </div>
-            <div class="caption">
-                
-            </div>
-        </section>
-    </body>
+    <div class="container">
+        <input type="text" placeholder="로그인" required>
+        <input type="text" placeholder="비밀번호" required>
+        <button>작성완료</button>
+    </div>
+
+    <div class="if">
+        <p>계정이 아직 없으신가요? </p><p id="join"><a href="./join.html"></a>이메일로 가입하기</p>
+    </div>
+
+    
+    <link rel="stylesheet" href="./css/setting.css">
+    <link rel="stylesheet" href="./css/input.css">
+
+</body>
 </html>
