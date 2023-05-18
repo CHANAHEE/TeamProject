@@ -79,13 +79,16 @@ function loadItems(){
     });
 }
 
+function loadReview(num){
+    var data= num;
+    var url = "share_detail.html?data=" + encodeURIComponent(data);
+    window.location.href = url;
+}
+
 //share_detail.html의 js
 //-------------------------------------------------------------
 //a 로 전달된 값 GET방식으로 받기
-function loadReview(){
-    var num= Integer.parseInt(request.getParameter("no"));
-    console.log(num);
-}
+
 
 // share_write.html의 js
 // ------------------------------------------------------------
