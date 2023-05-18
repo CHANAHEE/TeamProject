@@ -1,0 +1,81 @@
+/* 콘텐츠 블럭 타이틀 */
+.titlebox {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.title {
+    width: 90%;
+    font-family: 'pretendard_bold';
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+
+/* 콘텐츠 블럭 */
+.container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+  
+    display: block;
+  
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.container::-webkit-scrollbar{
+    display:none;
+}
+
+.content {
+    display: inline-block;
+    margin-right: 10px; /* 박스 간격 조정 */
+    background-color: white;
+    white-space : nowrap; /* 줄바꿈방지 */
+    overflow : hidden; /* 글 넘어가면 숨기기 */
+}
+
+ 
+.article {
+    width: auto;
+    justify-content: space-between;
+    flex: 1;
+    background-color: white;
+}
+
+.brand {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    color: #8e8e8e;
+}
+
+.name {
+    width: 10rem;
+    padding: 1rem 0 ;
+    font-family: 'pretendard_regular';
+    font-size: 0.9rem;
+    white-space : nowrap; /* 줄바꿈방지 */
+    overflow : hidden; /* 글 넘어가면 숨기기 */
+    text-overflow: ellipsis; /* 글 넘어가면 말줄임표 */
+}
+
+.price {
+    font-family: 'pretendard_bold';
+    font-size: 1rem;
+    color: #17BCE0;
+}
+
+.image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 0.2em;
+    padding-bottom: 70%;
+    background-size: cover;
+    background-position: center center;
+}
