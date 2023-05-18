@@ -26,8 +26,9 @@ function loadItems(){
             //a wbox 노드 생성
             var wbox=document.createElement('a');
             conshell.appendChild(wbox);
-            wbox.setAttribute('href',"./share_detail.html");
             var index=""+review[i].no;
+            var str3="./share_detail.html?id="+index;
+            wbox.setAttribute('href',str3);
             console.log(index);
             wbox.setAttribute('id',index);
 
