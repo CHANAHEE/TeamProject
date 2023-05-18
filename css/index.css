@@ -3,6 +3,9 @@
     #edit{
         visibility: collapse;
     }
+    #menuicon{
+        visibility: collapse;
+    }
 }
 
 .container {
@@ -104,6 +107,7 @@ input[id="menuicon"] + label span {
     border-radius: 10px;
     background:#606060;
     transition:all .35s;
+    
 }
 
 
@@ -121,7 +125,7 @@ input[id="menuicon"] + label span:nth-child(3) {
 
 
 /* 클릭시 X 모양으로 변환 */
-input[id="menuicon"]:checked + label {z-index:3;}
+/* input[id="menuicon"]:checked + label {z-index:3;}
 input[id="menuicon"]:checked + label span {background:#421b1b;}
 
 input[id="menuicon"]:checked + label span:nth-child(1){
@@ -134,7 +138,7 @@ input[id="menuicon"]:checked + label span:nth-child(2){
 input[id="menuicon"]:checked + label span:nth-child(3){
     top:50%;
     transform: translateY(-50%) rotate(-45deg);
-}
+} */
 
 /* 드로우어(서랍) 메뉴 */
 div[class="sidebar"] {
@@ -149,10 +153,9 @@ div[class="sidebar"] {
     transition: all .35s;
     border-right: 1px solid rgb(219, 219, 219);
 }
-input[id="menuicon"]:checked + label + div {
+/* input[id="menuicon"]:checked + label + div {
     left: 0px;
-}
-
+} */
 
 
 
@@ -160,6 +163,12 @@ input[id="menuicon"]:checked + label + div {
 #login_container{
     display: flex;
     margin-bottom: 70px;
+    
+}
+
+#close{
+    width: fit-content;
+    margin: 2rem 0 2rem auto;
 }
 #login_container #login_drawer{
     margin-left: auto;
@@ -188,7 +197,7 @@ input[id="menuicon"]:checked + label + div {
 }
 .menu {
     margin: 0 35px;
-    margin-top: 80px;
+    margin-top: 0px;
     width: 80%;
     height: 80%;
     /* border: 1px dashed; */
@@ -201,7 +210,7 @@ input[id="menuicon"]:checked + label + div {
     font-size: 1.2em;
     font-weight: 550;
     margin-top: 0.5em;
-
+    
 }
 
 .sub_category_list{

@@ -13,10 +13,10 @@
   <!-- onload="openHome()" -->
   <body id="super" onload="openHome()">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <div class="container" id="logo_container">
-      <nav class="navbar navbar-expand-md navbar-light bg-white">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="navbar-collapse  w-100 order-1 order-md-0 ">
             <input type="checkbox" id="menuicon">
             <label for="menuicon" id="bb">
                 <span></span>
@@ -25,14 +25,13 @@
             </label>
             <div class="sidebar" id="cc">
                 <div class="menu">
-                  <input type="checkbox" id="menuicon">
-                  
+                    <div id="close"><img src="./image/close.png" alt="" width="20px" ></div>
                     <div id="login_container">
                       <a href="" id="signup_drawer"><button>회원가입</button></a>
                       <a href="./Login.html" id="login_drawer"><button>로그인</button></a>
                     </div>
                     <div class="side_list" onclick="openHome()">홈 </div>
-                    <hr width="100%">
+                    <hr>
                     <div class="side_list">쇼핑</div>
                     <hr>
                     <div class="side_list" onclick="openShare()">집들이</div>
@@ -50,7 +49,7 @@
 
 
       <div id="edit">
-        <button id="edit_button">글쓰기</button>
+        <button id="edit_button" onclick="openWrite()">글쓰기</button>
       </div>
   
 
@@ -76,55 +75,63 @@
     
     <script>
       function openHome(){
-          var xhr = new XMLHttpRequest();
-          xhr.onreadystatechange = function(){
-              if(xhr.readyState == 4 && xhr.status == 200){
-                  var e = document.getElementById('target');
-                  e.innerHTML = xhr.responseText; 
-              }
-          }
-
-          xhr.open('GET','./home.html',true); 
-          xhr.send();
+        var target = document.getElementById('target');
+        fetch ('./home.html').then((response) => response.text())
+                    .then((data) => {
+                      target.innerHTML = data
+                    });
+         
       }          
       
       function openShare(){
-          var xhr = new XMLHttpRequest();
-          xhr.onreadystatechange = function(){
-              if(xhr.readyState == 4 && xhr.status == 200){
-                  var e = document.getElementById('target');
-                  e.innerHTML = xhr.responseText;    
-              }
-          }
-          xhr.open('GET','./Share.html',true); 
-          xhr.send();
+        var target = document.getElementById('target');
+        fetch ('./share.html').then((response) => response.text())
+                    .then((data) => {
+                      target.innerHTML = data
+                    });
       }
 
+      function openWrite(){
+        var target = document.getElementById('target');
+        fetch ('./share_write.html').then((response) => response.text())
+                    .then((data) => {
+                      target.innerHTML = data
+                    });
+      }
+
+      function openShare(){
+        var target = document.getElementById('target');
+        fetch ('./share.html').then((response) => response.text())
+                    .then((data) => {
+                      target.innerHTML = data
+                    });
+      }
       function login(){
         
       }
-
+      
       var menuicon = document.getElementById('menuicon');
       menuicon.onclick = function(){
+        document.getElementById('cc').style.left = "0px";
         document.getElementById('super').style.backgroundColor = "#888888";
         document.getElementById('logo_container').style.backgroundColor = "#888888";
         document.getElementById('edit_button').style.backgroundColor = "#999999";
         document.getElementById('edit_button').style.color = "#777777 "
-        var close_icon = document.getElementById("super");
-        if(menuicon.checked){
-          
-          close_icon.addEventListener("click",function(){
-            alert("클릭 이벤트 실행 checked");
-            document.getElementById('cc').style.left = "-380px";
-          });
-        }else{
-          close_icon.addEventListener("click",function(){
-            alert("클릭 이벤트 실행 unchecked");
-            document.getElementById('cc').style.left = "-380px";
-          });
-        }    
+        document.getElementById('bb').style.color = "#888888"
+        document.getElementById('bb').style.visibility = "hidden"
+        
+   
       }
-      
+      var close = document.getElementById('close')
+      close.onclick = function(){
+        document.getElementById('cc').style.left = "-380px";
+        document.getElementById('super').style.backgroundColor = "white";
+        document.getElementById('logo_container').style.backgroundColor = "white";
+        document.getElementById('edit_button').style.backgroundColor = "#17BCE0";
+        document.getElementById('edit_button').style.color = "white"
+        document.getElementById('bb').style.visibility = "visible"
+        document.getElementById('bb').checked = false
+      }
 
       
     </script>
