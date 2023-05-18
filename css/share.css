@@ -1,10 +1,43 @@
 /* share.html css */
 /* ------------------------------------------------------- */
-/* font설정 */
-  @font-face {
-    font-family: "MyFont";
-    src: url("../font/pretendard_bold.otf");
+/* 기본설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+a {
+    text-decoration: none;
+    color: #525252;
 }
+
+/* 폰트설정 */
+@font-face {
+    font-family: 'pretendard_regular';
+    src: url(../font/pretendard_regular.otf);
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'pretendard_bold';
+    src: url(../font/pretendard_bold.otf);
+}
+
+body, html {
+    line-height: 1;
+    font-family: 'pretendard_regular','Gill Sans',sans-serif ;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.4px;
+    font-size: 1rem;
+}
+
+hr {
+    background: #D9D9D9;
+    height:1px;
+    border:0;
+}
+
 /* floating 버튼 메뉴 */
 .floating{
     position: fixed;

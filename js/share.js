@@ -8,21 +8,34 @@ function toWrite(){
         window.location.href="./share.html"
     }
 }
+
+//화면이 불러와질때(onload=) 화면에 추가되는 리뷰(서버에 저장되어있는것들)
 function loadItems(){
+    //서버에서 db데이터 불러오기
     fetch('./network/loadShare.php')
     .then(function(response){
         return response.json();
     }).then(function(review){
         console.log(review[0].rimg);
-        // var a="";    
+
+        //자식노드들을 새로 추가(리사이클러뷰처럼 db다 불러올때까지 반복해서 만듬)
         for(var i=0;i<review.length;i++){
 
             //container(최외곽) div 불러오기
             var conshell=document.getElementById('shell');
+            //a wbox 노드 생성
+            var wbox=document.createElement('a');
+            conshell.appendChild(wbox);
+            wbox.setAttribute('href',"./share_detail.html");
+            var index=""+review[i].no;
+            console.log(index);
+            wbox.setAttribute('id',index);
+
             //div box 노드 생성
             var box = document.createElement('div');
-            conshell.appendChild(box);
+            wbox.appendChild(box);
             box.setAttribute('class',"box");
+            
             //div box노드의 자식 a card 노드 생성
             var card = document.createElement('a');
             box.appendChild(card);
@@ -58,7 +71,8 @@ function loadItems(){
             //article 노드의 자식 p 노드 생성
             var pp=document.createElement('p');
             art.appendChild(pp);
-            pp.innerHTML=review[i].title;   
+            pp.innerHTML=review[i].title;
+
         };
     });
 }
