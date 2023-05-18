@@ -14,13 +14,26 @@
 
             function loadItems(){
                 fetch ('./network/loadShare.php').then((response) => response.json())
-                    .then((data) => console.log(data[0].title));
+                    .then((data) => console.log(data[0].title))
+                    .then(function(response){
+                        var review = response;
+                        var a="";
+                        for(var i=0;i<review.length;i++){
+                            a+='<div class="item"> <img src='+review[i].rimg+' alt="interior01> <p>'+review[i].title+'</p></div>';
+                        }
+                        document.getElementById('item_list').innerHTML=a;
+                    });
+            }
+
+            function loadItems(){
+                fetch("./network/loadShare.php").then(function(response){
+                    return response.json();
+                }).then(function(items){
+                    console.log(items)
+                })
             }
 
             // loadItems();
-
-
-
             // loadItems().then((items) => {
             // console.log(items);
             // display(items);//화면에 출력
