@@ -1,6 +1,5 @@
 .container {
-    width: 90%;
-    max-width: 1240px;
+    max-width: 360px;
     height: 70%;
     margin: 1rem auto 0 auto;
     margin-bottom: 60px;
@@ -9,9 +8,20 @@
 
 input[type=text] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1rem;
+    margin: 0.5rem auto;
     box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
 }
 
 input::placeholder {
@@ -21,9 +31,11 @@ input::placeholder {
 
 textarea {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1rem;
+    margin: 1rem auto;
     box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
 }
 
 textarea::placeholder {
@@ -42,3 +54,5 @@ button{
 	border-radius: 0.2rem;
     margin-top: 1rem;
 }
+
+
