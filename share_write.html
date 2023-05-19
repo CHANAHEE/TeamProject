@@ -7,22 +7,23 @@
     <title>share_write</title>
     <link rel="stylesheet" type="text/css" href="./css/setting.css">
     <link rel="stylesheet" type="text/css" href="./css/input_colum.css">
+    <script src="./js/share_write.js"></script>
 </head>
 <body>
 
     <div class="container">
-
-        <div class="imagebox">
-            <img src="./image/icon/icon_camera.svg" alt="camera icon">
-            <p>이미지 추가하기</p>
+        <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
+        <div class="imagebox" id="image_container">
+            <input type="file" name="rimg" id="image" accept="image/*" onchange="setThumbnail(event);">
         </div>
 
         <div class="textbox">
-            <input type="text" placeholder="제목" required>
-        <textarea class="form-control" rows="10" placeholder="내용을 입력해주세요." required></textarea>
-        <button>작성완료</button>
+            <input type="text" name="title" placeholder="우리집 간단자랑(제목)" required>
+            <textarea class="form-control" name="review" rows="10" placeholder="우리집 집들이 내용쓰기" required></textarea>
+
         </div>
-    
+        <input type="submit" onclick="submitEvent()"/>
+        </form>
     </div>
 
 </body>

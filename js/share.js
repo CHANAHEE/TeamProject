@@ -27,9 +27,8 @@ function loadItems(){
             var wbox=document.createElement('a');
             conshell.appendChild(wbox);
             var index=""+review[i].no;
-            var str3="loadReview("+index+")";
-            wbox.setAttribute('href',"#");
-            wbox.setAttribute('onclick',str3)
+            var str3="./share_detail.html?no="+index;
+            wbox.setAttribute('href',str3);
             console.log(str3);
             wbox.setAttribute('id',index);
 
@@ -77,12 +76,6 @@ function loadItems(){
 
         };
     });
-}
-
-function loadReview(num){
-    var data= num;
-    var url = "share_detail.html?data=" + data;
-    window.location.href = url;
 }
 
 //share_detail.html의 js
