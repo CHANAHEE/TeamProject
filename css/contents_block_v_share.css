@@ -18,7 +18,7 @@
     }
 }
   
-.card {
+.rec {
     min-height: 100%;
     /* background: #EEE;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
@@ -36,7 +36,7 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 } */
   
-.card article {
+.rec article {
     padding: 1rem 0.5rem;
     /* display: flex; */
     /* flex-direction: column; */
@@ -57,7 +57,7 @@ h1{
     background-position: center center;
 }
   
-.card p {
+.rec p {
     font-size: 0.8rem;
     flex: 1;
     line-height: 1.4;
