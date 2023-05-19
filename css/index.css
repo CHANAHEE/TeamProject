@@ -1,5 +1,3 @@
-
-
 @media all and (max-width: 1240px){
     #edit{
         visibility: collapse;
@@ -9,18 +7,18 @@
     }
 }
 
-.container {
+.logo_container {
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
     background-color: white;
 }
-.container>div,nav{
+.logo_container>div,nav{
     height: 5.5rem;
     align-items: center;
 }
-#logo_container {
+#title_container {
     display: flex;
     justify-content: center; /* 가운데 정렬을 위한 추가 */
     width: 100%;
@@ -50,6 +48,7 @@
     min-width: 100px;
     margin-left: auto;
     margin-top: 5px;
+    
 }
 
 #edit button:hover{
@@ -57,22 +56,10 @@
     color: rgb(208, 208, 208);
 }
 
-section{
-    height: 100%;
-    display: flex;
-}
 
-section div{
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    margin-top: 180px;
-}
 
-footer{
-    position: fixed;
+#footer{
+    position: static;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -125,22 +112,6 @@ input[id="menuicon"] + label span:nth-child(3) {
 }
 
 
-/* 클릭시 X 모양으로 변환 */
-/* input[id="menuicon"]:checked + label {z-index:3;}
-input[id="menuicon"]:checked + label span {background:#421b1b;}
-
-input[id="menuicon"]:checked + label span:nth-child(1){
-    top:50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-input[id="menuicon"]:checked + label span:nth-child(2){
-    opacity: 0;
-}
-input[id="menuicon"]:checked + label span:nth-child(3){
-    top:50%;
-    transform: translateY(-50%) rotate(-45deg);
-} */
-
 /* 드로우어(서랍) 메뉴 */
 div[class="sidebar"] {
     width: 380px;
@@ -154,9 +125,6 @@ div[class="sidebar"] {
     transition: all .35s;
     border-right: 1px solid rgb(219, 219, 219);
 }
-/* input[id="menuicon"]:checked + label + div {
-    left: 0px;
-} */
 
 
 
@@ -196,7 +164,7 @@ div[class="sidebar"] {
     color: #0f809a;
     background-color: rgb(210, 210, 210);
 }
-.menu {
+#menu {
     margin: 0 35px;
     margin-top: 0px;
     width: 80%;
