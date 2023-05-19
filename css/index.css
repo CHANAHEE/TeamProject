@@ -2,6 +2,7 @@
     #edit{
         visibility: collapse;
     }
+
     #menuicon{
         visibility: collapse;
     }
@@ -44,11 +45,8 @@
     background-color: #17BCE0;
     color: white;
     border-radius: 4px;
-    padding: 10px 20px;
-    min-width: 100px;
     margin-left: auto;
     margin-top: 5px;
-    
 }
 
 #edit button:hover{
@@ -79,15 +77,31 @@ input[id="menuicon"] {
 input[id="menuicon"] + label {
     display: block;
     
-    width: 30px;
+    width: 24px;
     height: 25px;
     position: relative;
     cursor: pointer;
-    margin-left: 20px;
+    text-align: center;
+  
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+#menuicon_label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuicon_label img {
+    display: block; /* 이미지를 블록 수준 요소로 설정하여 가운데 정렬할 수 있게 합니다 */
 }
 
 /* 햄버거 메뉴 각 줄 모양 */
-input[id="menuicon"] + label span {
+/* input[id="menuicon"] + label span {
     display: block;
     position: absolute;
     width: 100%;
@@ -95,8 +109,9 @@ input[id="menuicon"] + label span {
     border-radius: 10px;
     background:#606060;
     transition:all .35s;
+    background-image: url(../image/icon/icon_menu.svg);
     
-}
+} */
 
 
 
@@ -126,7 +141,20 @@ div[class="sidebar"] {
     border-right: 1px solid rgb(219, 219, 219);
 }
 
-
+@media all and (max-width: 360px){
+    div[class="sidebar"] {
+        width: 100%;
+        height: 100%;
+        background:rgb(255, 255, 255);
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 5;
+        transition: all .35s;
+        border-right: 1px solid rgb(219, 219, 219);
+    }
+}
 
 /* 사이드 메뉴  */
 #login_container{
@@ -142,7 +170,7 @@ div[class="sidebar"] {
 #login_container #login_drawer{
     margin-left: auto;
 }
-#login_drawer button{
+/* #login_drawer button{
     width: 140px;
     height: 40px;
     border: 0px;
@@ -163,11 +191,11 @@ div[class="sidebar"] {
 #signup_drawer button:hover{
     color: #0f809a;
     background-color: rgb(210, 210, 210);
-}
+} */
 #menu {
-    margin: 0 35px;
+    margin: 0;
     margin-top: 0px;
-    width: 80%;
+    width: 100%;
     height: 80%;
     /* border: 1px dashed; */
     color: #000000;
