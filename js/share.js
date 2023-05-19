@@ -77,25 +77,3 @@ function loadItems(){
         };
     });
 }
-
-//share_detail.html의 js
-//-------------------------------------------------------------
-//a 로 전달된 값 GET방식으로 받기
-
-
-// share_write.html의 js
-// ------------------------------------------------------------
-// 이미지 업로드 미리보기 js
-function setThumbnail(input) {
-if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-    document.getElementById('preview').src = e.target.result;
-    };
-    reader.readAsDataURL(input.files[0]);
-    } else {
-        document.getElementById('preview').src = "";
-    }
-}
-
-// 리뷰등록 submit 기능처리
