@@ -1,26 +1,25 @@
-
-
 @media all and (max-width: 1240px){
     #edit{
         visibility: collapse;
     }
+
     #menuicon{
         visibility: collapse;
     }
 }
 
-.container {
+.logo_container {
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
     background-color: white;
 }
-.container>div,nav{
+.logo_container>div,nav{
     height: 5.5rem;
     align-items: center;
 }
-#logo_container {
+#title_container {
     display: flex;
     justify-content: center; /* 가운데 정렬을 위한 추가 */
     width: 100%;
@@ -46,8 +45,6 @@
     background-color: #17BCE0;
     color: white;
     border-radius: 4px;
-    padding: 10px 20px;
-    min-width: 100px;
     margin-left: auto;
     margin-top: 5px;
 }
@@ -57,22 +54,10 @@
     color: rgb(208, 208, 208);
 }
 
-section{
-    height: 100%;
-    display: flex;
-}
 
-section div{
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    margin-top: 180px;
-}
 
-footer{
-    position: fixed;
+#footer{
+    position: static;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -92,15 +77,31 @@ input[id="menuicon"] {
 input[id="menuicon"] + label {
     display: block;
     
-    width: 30px;
+    width: 24px;
     height: 25px;
     position: relative;
     cursor: pointer;
-    margin-left: 20px;
+    text-align: center;
+  
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+#menuicon_label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuicon_label img {
+    display: block; /* 이미지를 블록 수준 요소로 설정하여 가운데 정렬할 수 있게 합니다 */
 }
 
 /* 햄버거 메뉴 각 줄 모양 */
-input[id="menuicon"] + label span {
+/* input[id="menuicon"] + label span {
     display: block;
     position: absolute;
     width: 100%;
@@ -108,8 +109,9 @@ input[id="menuicon"] + label span {
     border-radius: 10px;
     background:#606060;
     transition:all .35s;
+    background-image: url(../image/icon/icon_menu.svg);
     
-}
+} */
 
 
 
@@ -125,22 +127,6 @@ input[id="menuicon"] + label span:nth-child(3) {
 }
 
 
-/* 클릭시 X 모양으로 변환 */
-/* input[id="menuicon"]:checked + label {z-index:3;}
-input[id="menuicon"]:checked + label span {background:#421b1b;}
-
-input[id="menuicon"]:checked + label span:nth-child(1){
-    top:50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-input[id="menuicon"]:checked + label span:nth-child(2){
-    opacity: 0;
-}
-input[id="menuicon"]:checked + label span:nth-child(3){
-    top:50%;
-    transform: translateY(-50%) rotate(-45deg);
-} */
-
 /* 드로우어(서랍) 메뉴 */
 div[class="sidebar"] {
     width: 380px;
@@ -154,11 +140,21 @@ div[class="sidebar"] {
     transition: all .35s;
     border-right: 1px solid rgb(219, 219, 219);
 }
-/* input[id="menuicon"]:checked + label + div {
-    left: 0px;
-} */
 
-
+@media all and (max-width: 360px){
+    div[class="sidebar"] {
+        width: 100%;
+        height: 100%;
+        background:rgb(255, 255, 255);
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 5;
+        transition: all .35s;
+        border-right: 1px solid rgb(219, 219, 219);
+    }
+}
 
 /* 사이드 메뉴  */
 #login_container{
@@ -174,7 +170,7 @@ div[class="sidebar"] {
 #login_container #login_drawer{
     margin-left: auto;
 }
-#login_drawer button{
+/* #login_drawer button{
     width: 140px;
     height: 40px;
     border: 0px;
@@ -195,11 +191,11 @@ div[class="sidebar"] {
 #signup_drawer button:hover{
     color: #0f809a;
     background-color: rgb(210, 210, 210);
-}
-.menu {
-    margin: 0 35px;
+} */
+#menu {
+    margin: 0;
     margin-top: 0px;
-    width: 80%;
+    width: 100%;
     height: 80%;
     /* border: 1px dashed; */
     color: #000000;
