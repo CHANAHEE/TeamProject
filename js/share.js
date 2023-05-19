@@ -81,7 +81,7 @@ function loadItems(){
 
 function loadReview(num){
     var data= num;
-    var url = "share_detail.html?data=" + encodeURIComponent(data);
+    var url = "share_detail.html?data=" + data;
     window.location.href = url;
 }
 
