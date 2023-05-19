@@ -3,10 +3,11 @@
     header("Access-Control-Allow-Credentials: true");
     header('Content-Type:application/json; charset=utf-8; Access-Control-Allow-Origin: *');
 
+    $num=$_GET['no'];
     $db=mysqli_connect('localhost','wny2023','thdek543!','wny2023');
     mysqli_query($db,"set names utf8");
 
-    $sql="SELECT no,id,pimg,rimg,title,date FROM teamprojectShare";
+    $sql="SELECT no,id,pimg,rimg,title,date FROM teamprojectShare where no='$num'";
     $result=mysqli_query($db,$sql);
   
     //결과표로부터 총 레코드 수 알아내기

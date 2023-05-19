@@ -1,0 +1,210 @@
+@media all and (max-width: 1240px){
+    #edit{
+        visibility: collapse;
+    }
+    #menuicon{
+        visibility: collapse;
+    }
+}
+
+.logo_container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+}
+.logo_container>div,nav{
+    height: 5.5rem;
+    align-items: center;
+}
+#title_container {
+    display: flex;
+    justify-content: center; /* 가운데 정렬을 위한 추가 */
+    width: 100%;
+}
+
+#logo {
+    color: #000;
+    text-decoration: none;
+    font-family: "pretendard_bold", sans-serif;
+    font-size: xx-large;
+    z-index: 3;
+}
+
+#edit{
+    display: flex;
+    margin-left: auto;
+    width: 10%;
+}
+
+#edit button{
+    border: 0px;
+    height: 40px;
+    background-color: #17BCE0;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-width: 100px;
+    margin-left: auto;
+    margin-top: 5px;
+    
+}
+
+#edit button:hover{
+    background-color: #107c95;
+    color: rgb(208, 208, 208);
+}
+
+
+
+#footer{
+    position: static;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* 햄버거 메뉴 */
+/* 체크박스 이미지 삭제 */
+
+input[id="menuicon"] {
+    display: none;
+}
+
+/* 햄버거 메뉴 전체 레이아웃 */
+input[id="menuicon"] + label {
+    display: block;
+    
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* 햄버거 메뉴 각 줄 모양 */
+input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background:#606060;
+    transition:all .35s;
+    
+}
+
+
+
+input[id="menuicon"] + label span:nth-child(1) {
+    top:0;
+}
+input[id="menuicon"] + label span:nth-child(2) {
+    top:50%;
+    transform: translateY(-50%);
+}
+input[id="menuicon"] + label span:nth-child(3) {
+    bottom: 0;
+}
+
+
+/* 드로우어(서랍) 메뉴 */
+div[class="sidebar"] {
+    width: 380px;
+    height: 100%;
+    background:rgb(255, 255, 255);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -380px;
+    z-index: 5;
+    transition: all .35s;
+    border-right: 1px solid rgb(219, 219, 219);
+}
+
+
+
+/* 사이드 메뉴  */
+#login_container{
+    display: flex;
+    margin-bottom: 70px;
+    
+}
+
+#close{
+    width: fit-content;
+    margin: 2rem 0 2rem auto;
+}
+#login_container #login_drawer{
+    margin-left: auto;
+}
+#login_drawer button{
+    width: 140px;
+    height: 40px;
+    border: 0px;
+    background-color: #17BCE0;
+    color: white;
+}
+#login_drawer button:hover{
+    background-color: #1888a1;
+    color: rgb(211, 211, 211);
+}
+#signup_drawer button{
+    width: 140px;
+    height: 40px;
+    border: 1px solid #17BCE0;
+    color: #17BCE0;
+    background-color: white;
+}
+#signup_drawer button:hover{
+    color: #0f809a;
+    background-color: rgb(210, 210, 210);
+}
+#menu {
+    margin: 0 35px;
+    margin-top: 0px;
+    width: 80%;
+    height: 80%;
+    /* border: 1px dashed; */
+    color: #000000;
+}
+.category_list{
+    list-style:none;
+    margin:0; 
+    padding:0;
+    font-size: 1.2em;
+    font-weight: 550;
+    margin-top: 0.5em;
+    
+}
+
+.sub_category_list{
+    list-style:none;
+    margin:0;
+    padding:2;
+    padding-left: 25;
+    font-size: 0.8em;
+    
+}
+
+.side_list{
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    
+}
+.h4main{
+    margin-bottom: 1em;
+}
+.h4main:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.side_list:hover {
+    color: #949494;
+    cursor: pointer;
+} 
+
