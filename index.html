@@ -45,13 +45,13 @@
             <hr> -->
 
             <ul class="list">
-              <li>홈<img src="#" alt=""></li><hr>
-              <li>쇼핑<img src="#" alt=""></li><hr>
+              <li><a href="./index.html">홈</a><img src="#" alt=""></li><hr>
+              <li onclick="openShop()">쇼핑<img src="#" alt=""></li><hr>
               <li>베스트<img src="#" alt=""></li><hr>
               <li>추천상품<img src="#" alt=""></li><hr>
               <li>기획전<img src="#" alt=""></li><hr>
-              <li>집들이<img src="#" alt=""></li><hr>
-              <li>주문내역<img src="#" alt=""></li><hr>
+              <li onclick="openShare()">집들이<img src="#" alt=""></li><hr>
+              <li onclick="openShop()">주문내역<img src="#" alt=""></li><hr>
 
               <style>
 
@@ -102,9 +102,15 @@
         fetch ('./home.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
-                      var scriptElement = document.createElement('script');
-                      scriptElement.src = './js/contents_block_v.js';
-                      target.appendChild(scriptElement);
+
+                      if(document.getElementById('script') == null){
+                        alert("hello")
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = './js/contents_block_v.js';
+                        target.appendChild(scriptElement);
+                      }
+
+
                     });
          
       }          
