@@ -10,11 +10,15 @@
 <body>
 
     <div class="container">
-        <div><p>닉네임</p><input type="text" placeholder="한글, 영문 2~8자" required></div><br>
-        <div><p>이메일</p><input type="text" placeholder="이메일형식 아이디 입력" required></div><br>
-        <div><p>비밀번호</p><input type="password" placeholder="영문, 숫자, 특수문자 조합 8-16자" required></div><br>
-        <div><p>비밀번호 확인</p><input type="password" required></div>
-        <button id="button_main">가입하기</button>
+       
+        <form action="./network/join.php" method="get">
+            <div><p>닉네임</p><input type="text" name="name" placeholder="한글, 영문 2~8자" required></div><br>
+            <div><p>이메일</p><input type="text" name="email" placeholder="이메일형식 아이디 입력" required></div><br>
+            <div><p>비밀번호</p><input type="password" name="password" placeholder="영문, 숫자, 특수문자 조합 8-16자" required></div><br>
+            <div><p>비밀번호 확인</p><input type="password" required></div>
+            <input type="submit" id="button_main" onclick="" value="가입하기"></button>
+        </form>
+
     </div>
             
 

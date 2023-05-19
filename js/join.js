@@ -1,38 +1,31 @@
-function profile(){
-    var nickname = document.forms["profile"]["nickname"].value;
-    var email = document.forms["profile"]["email"].value;
-    var password = document.forms["profile"]["password"].value;
-    var confirm_password = document.forms["profile"]["confirm_password"].value;
+// 회원가입 양식 제출 시 유효성 검사
+function validateForm() {
+    var name = document.forms["signupForm"]["name"].value;
+    var email = document.forms["signupForm"]["email"].value;
+    var password = document.forms["signupForm"]["password"].value;
 
-    //닉네임 유효성 검사
-    function profile(nickname){
-        if(nickname.length < 2 || nickname.length > 8){
-            alert("닉네임은 2글자에서 8글자 사이여야 합니다.");
-            return false;
-        }
-        return true;
+     // 닉네임 유효성 검사
+     if (name.length < 2 || nickname.length > 8) {
+        alert("닉네임은 2글자에서 8글자 사이여야 합니다.");
+        return false;
     }
 
-    //email 유효성 검사
-    function validateEmail($email) {
-        if (!preg_match("/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/", $email)) {
-            return false;
-        }
-        return true;
-    }
-    
+     // 이메일 유효성 검사
+     var emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+     if (!emailRegex.test(email) || email.length < 5 || email.length > 11) {
+         alert("이메일은 영문자와 숫자 조합이며, 5글자에서 11글자 사이여야 합니다.");
+         return false;
+     }
 
-    //비밀번호 유효성 검사
-    function profile(password){
-        if(!preg_match("/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,16}$/"));
-        alert("비밀번호는 숫자와 영어,특수문자를 포합해서 8~16글자 사이여야 합니다.");
-    }
-
-    //비밀번호 확인 검사
-    function profile(confirm_password){
-        if($password !== $confirm_password){
-
-        }
+    // 비밀번호 유효성 검사
+    var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+    if (!passwordRegex.test(password)) {
+        alert("비밀번호는 영문자, 숫자, 특수문자를 포함하고 8글자에서 16글자 사이여야 합니다.");
+        return false;
     }
 
+    // 비밀번호 확인
+    if ($password !== $confirmPassword) {
+    die("비밀번호가 일치하지 않습니다.");
+}
 }

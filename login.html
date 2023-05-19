@@ -8,16 +8,19 @@
     <title>login</title>
 </head>
 <body>
-
+        
     <div class="container">
-        <input type="text" placeholder="로그인" required>
-        <input type="password" placeholder="비밀번호" required>
-        <button id="button_main">로그인</button>
+        <form action="./network/login.php" method="post">
+        <input type="text" name="email" placeholder="로그인" required>
+        <input type="password" name="password" placeholder="비밀번호" required>
+        <!-- <button id="button_main">로그인</button> -->
+        <input type="submit" id="login_btn" onclick="" value="로그인">
+        </form>
 
         <p id="account">계정이 아직 없으신가요? <a href="./join.html" id="joinlink">이메일로 가입하기</a></p>
 
     </div>
-            
+
 
     <link rel="stylesheet" type="text/css" href="./css/setting.css">
     <link rel="stylesheet" type="text/css" href="./css/input.css">

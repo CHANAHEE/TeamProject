@@ -1,42 +1,30 @@
 <?php
 // MySQL 데이터베이스 연결 설정
 $servername = "localhost";
-$username = "사용자_이름";
-$password = "비밀번호";
-$dbname = "데이터베이스_이름";
+$username = "mrhi1996";
+$password = "a1b2c3d4!!";
+$dbname = "mrhi1996";
 
-// MySQL 연결 생성
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $name = $_GET['name'];
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+    // $imgPath = 
+    
+    //특수문자 - SQL에서 오동작 방지
+    $email = addslashes($email);
+    $password = addslashes($password);
 
-// 연결 확인
-if ($conn->connect_error) {
-    die("MySQL 연결 오류: " . $conn->connect_error);
-}
+    //MySQL DB [account_email]
+    $db = mysqli_connect('localhost', 'mrhi1996', 'a1b2c3d4!', 'mrhi1996');
+    mysqli_query($db, 'set names utf8');
 
-$sql = "CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nickname VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
-)";
+    $sql = "INSERT INTO account(name,email,password,imgPath) VALUES('$name','$email','$password','qwer')";
+    $result = mysqli_query($db, $sql);
 
-if ($conn->query($sql) === TRUE) {
-    echo "테이블이 생성되었습니다.";
-} else {
-    echo "오류: " . $conn->error;
-}
-
-$nickname = $_POST['nickname'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-$sql = "INSERT INTO users (nickname, email, password) VALUES ('$nickname', '$email', '$password')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "회원가입이 완료되었습니다.";
-} else {
-    echo "오류: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
+    if($result){
+        $url = "http://mrhi1996.dothome.co.kr/login.html";
+        header("Location: $url");
+        echo true;
+    } 
 ?>
+  
