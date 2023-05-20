@@ -53,10 +53,10 @@
 
           </ul> 
         </div>
-    </div>
+      </div>
 
       <!-- 이미지 요소 넣기 -->
-      <div id="title_container"><a href="./index.html" id="logo">두 루 마 리</a></div>
+      <div id="title_container"><a href="./index.html" id="logo"><img src="./image/logo.png" alt="" style="width: 200px;"></a></div>
       
       <div id="edit">
         <button id="edit_button" onclick="openWrite()">글쓰기</button>
@@ -85,7 +85,6 @@
           var nickname = document.getElementById("nickname_index");
           nickname.innerHTML = name;
         }else{
-          alert("로그인 정보 없음")
           var userInfo = document.getElementById("userInfo_index");
           userInfo.style.display = "none";
         }
