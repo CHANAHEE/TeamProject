@@ -107,6 +107,7 @@
         var target = document.getElementById('target');
         fetch ('./share.html').then((response) => response.text())
                     .then((data) => {
+                      closeSideBar();
                       target.innerHTML = data
                       var scriptElement = document.createElement('script');
                       scriptElement.type = 'text/javascript'
@@ -119,6 +120,7 @@
         var target = document.getElementById('target');
         fetch ('./shop.html').then((response) => response.text())
                     .then((data) => {
+                      closeSideBar();
                       target.innerHTML = data
                       var scriptElement = document.createElement('script');
                       scriptElement.src = './js/contents_block_v.js';
@@ -130,23 +132,19 @@
         var target = document.getElementById('target');
         fetch ('./order.html').then((response) => response.text())
                     .then((data) => {
-                      target.innerHTML = data
-                      // var styleElement = document.createElement('link');
-                      // styleElement.rel = 'stylesheet';
-                      // styleElement.type = 'text/css';
-                      // styleElement.href = './css/setting.css';
-
-                      // var styleElement2 = document.createElement('link');
-                      // styleElement2.rel = 'stylesheet';
-                      // styleElement2.type = 'text/css';
-                      // styleElement2.href = './css/state.css';
-                      
+                      closeSideBar();
+                      target.innerHTML = data                      
                     });
                     
       }
       
       var menuicon = document.getElementById('menuicon');
-      menuicon.onclick = function(){
+      menuicon.onclick = function(){openSideBar()};
+
+      var close = document.getElementById('close')
+      close.onclick = function(){closeSideBar()};
+
+      function openSideBar(){
         document.getElementById('sidebar').style.left = "0px";
         document.getElementById('super').style.backgroundColor = "#888888";
         document.getElementById('section').style.opacity = 0.4;
@@ -156,11 +154,9 @@
         document.getElementById('edit_button').style.backgroundColor = "#999999";
         document.getElementById('edit_button').style.color = "#777777 "
         document.getElementById('menuicon_label').style.visibility = "hidden"
-        
-   
       }
-      var close = document.getElementById('close')
-      close.onclick = function(){
+
+      function closeSideBar(){
         document.getElementById('sidebar').style.left = "-100%";
         document.getElementById('super').style.backgroundColor = "transparent";
         document.getElementById('section').style.opacity = 1;
@@ -172,8 +168,6 @@
         document.getElementById('menuicon_label').style.visibility = "visible"
         document.getElementById('menuicon_label').checked = false
       }
-
-      
     </script>
 
   </body>
