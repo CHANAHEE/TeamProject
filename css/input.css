@@ -1,9 +1,10 @@
 .container {
     max-width: 360px;
     height: 70%;
-    margin: 1rem auto 0 auto;
+    margin: 10rem auto 0 auto;
     margin-bottom: 60px;
     align-content: center;
+    
 }
 
 input[type=text] {
