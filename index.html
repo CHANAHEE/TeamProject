@@ -8,10 +8,10 @@
 
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/setting.css">
-    <link rel="stylesheet" href="./css/state.css">
-    <link rel="stylesheet" href="./css/input_colum.css">
-
+    <link rel="stylesheet" href="./css/state_index.css">
+    <link rel="stylesheet" href="./css/input_colum_index.css">
   </head>
+
   <body onload="openHome()" id="super">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -29,7 +29,7 @@
       </nav>
 
       <div class="sidebar" id="sidebar">
-        <div id="menu">
+        <div ird="menu">
             <div id="close"><img src="./image/icon/icon_close.svg" alt="" width="16px" ></div>
             <div class="button">
               <a href="./join.html" id="signup_drawer"><button id="button_sub">회원가입</button></a>
@@ -45,13 +45,13 @@
             <hr> -->
 
             <ul class="list">
-              <li><a href="./index.html">홈</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openShop()">쇼핑</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openShop()">베스트</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openShop()">추천상품</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openShop()">기획전</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openShare()">집들이</a><img src="#" alt=""></li><hr>
-              <li><a href="#" onclick="openOrder()">주문내역</a><img src="#" alt=""></li><hr>
+              <li id="li_index"><a href="./index.html">홈</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openShop()">쇼핑</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openShop()">베스트</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openShop()">추천상품</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openShop()">기획전</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openShare()">집들이</a><img src="#" alt=""></li><hr id="hr_index">
+              <li id="li_index"><a href="#" onclick="openOrder()">주문내역</a><img src="#" alt=""></li><hr id="hr_index">
 
               <style>
 
@@ -60,15 +60,13 @@
               }
 
               .button {
-                      grid-template-columns: 1fr 1fr;
-                      grid-template-rows: auto;
-                      grid-gap: 10px;
-                      margin: 0 1em 2rem 1rem;
-                  }
-
-                hr {
-                  margin: 1.2rem 0;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                    grid-gap: 10px;
+                    margin: 0 1em 2rem 1rem;
                 }
+
+
               </style>
           </ul> 
         </div>
@@ -77,8 +75,6 @@
       <!-- 이미지 요소 넣기 -->
       <div id="title_container"><a href="./index.html" id="logo">두 루 마 리</a></div>
       
-
-
       <div id="edit">
         <button id="edit_button" onclick="openWrite()">글쓰기</button>
       </div>
@@ -86,15 +82,8 @@
     </div>
     <hr style="margin: 0;">
 
-    <section id="section">
-      <div id="target">
-        
-      </div>
-    </section>
+    <section id="section"><div id="target"></div></section>
 
-    
-  
-    
     
     <script>
       function openHome(){
@@ -105,8 +94,6 @@
                       var scriptElement = document.createElement('script');
                       scriptElement.src = './js/contents_block_v.js';
                       target.appendChild(scriptElement);
-
-                     
                     });
       }          
       function openWrite(){
@@ -128,8 +115,6 @@
                     });
       }
 
-
-
       function openShop(){
         var target = document.getElementById('target');
         fetch ('./shop.html').then((response) => response.text())
@@ -146,17 +131,18 @@
         fetch ('./order.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
+                      // var styleElement = document.createElement('link');
+                      // styleElement.rel = 'stylesheet';
+                      // styleElement.type = 'text/css';
+                      // styleElement.href = './css/setting.css';
 
-                      var styleElement = document.createElement('link');
-                      styleElement.rel = 'stylesheet';
-                      styleElement.type = 'text/css';
-                      styleElement.href = './css/setting.css';
-
-                      var styleElement2 = document.createElement('link');
-                      styleElement2.rel = 'stylesheet';
-                      styleElement2.type = 'text/css';
-                      styleElement2.href = './css/state.css';
+                      // var styleElement2 = document.createElement('link');
+                      // styleElement2.rel = 'stylesheet';
+                      // styleElement2.type = 'text/css';
+                      // styleElement2.href = './css/state.css';
+                      
                     });
+                    
       }
       
       var menuicon = document.getElementById('menuicon');
