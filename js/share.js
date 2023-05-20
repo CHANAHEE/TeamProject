@@ -27,9 +27,8 @@ function loadItems(){
             var wbox=document.createElement('a');
             conshell.appendChild(wbox);
             var index=""+review[i].no;
-            var str3="loadReview("+index+")";
-            wbox.setAttribute('href',"#");
-            wbox.setAttribute('onclick',str3)
+            var str3="./share_detail.html?no="+index;
+            wbox.setAttribute('href',str3);
             console.log(str3);
             wbox.setAttribute('id',index);
 
@@ -78,31 +77,3 @@ function loadItems(){
         };
     });
 }
-
-function loadReview(num){
-    var data= num;
-    var url = "share_detail.html?data=" + data;
-    window.location.href = url;
-}
-
-//share_detail.html의 js
-//-------------------------------------------------------------
-//a 로 전달된 값 GET방식으로 받기
-
-
-// share_write.html의 js
-// ------------------------------------------------------------
-// 이미지 업로드 미리보기 js
-function setThumbnail(input) {
-if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-    document.getElementById('preview').src = e.target.result;
-    };
-    reader.readAsDataURL(input.files[0]);
-    } else {
-        document.getElementById('preview').src = "";
-    }
-}
-
-// 리뷰등록 submit 기능처리

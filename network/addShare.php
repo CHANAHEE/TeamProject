@@ -33,7 +33,11 @@
     $result=mysqli_query($db,$sql);
 
     //$result로 확인 echo
-    if($result) echo true;
+    if($result){
+        $url = "http://wny2023.dothome.co.kr/ateamProject/share.html";
+        header("Location: $url");
+        echo true;
+    } 
     else echo false;
 
     mysqli_close($db);
