@@ -6,7 +6,7 @@ function validateForm() {
 
     // 닉네임 유효성 검사
     var name = nameInput.value;
-    var namePattern = /^[a-zA-Z0-9]{2,9}$/;
+    var namePattern = /^[a-zA-Z0-9가-힣]{2,9}$/;
     if (!namePattern.test(name)) {
         alert("닉네임은 문자,숫자 조합의 2글자에서 8글자 사이여야 합니다.");
         nameInput.focus();

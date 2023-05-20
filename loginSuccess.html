@@ -4,6 +4,13 @@
         <meta charset='utf-8'>
         <title>No AJAX</title>
         <link rel="stylesheet" href="./css/loginSuccess.css">
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const name = urlParams.get('name');
+
+            sessionStorage.setItem("name",name);
+        </script>
     </head>
     <body>
     <div style='height: 3rem;'></div>

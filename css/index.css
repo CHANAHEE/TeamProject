@@ -1,3 +1,5 @@
+
+
 @media all and (max-width: 1240px){
     #edit{
         visibility: collapse;
@@ -7,7 +9,12 @@
         visibility: collapse;
     }
 }
-
+.button {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    grid-gap: 10px !important;
+    margin: 0 1em 2rem 1rem !important;
+}
 .logo_container {
     width: 90%;
     max-width: 1240px;
@@ -166,11 +173,30 @@ div[class="sidebar"] {
 
 #close{
     width: fit-content;
-    margin: 2rem 0 2rem auto;
+    margin: 2rem 1rem 2rem auto;
 }
 #login_container #login_drawer{
     margin-left: auto;
 }
+
+#userInfo_index {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+#userInfo_index>img{
+    width: 100px;
+}
+
+#nickname_index{
+    display: block;
+    font-size: 30px; 
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 /* #login_drawer button{
     width: 140px;
     height: 40px;

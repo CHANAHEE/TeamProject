@@ -31,43 +31,26 @@
       <div class="sidebar" id="sidebar">
         <div ird="menu">
             <div id="close"><img src="./image/icon/icon_close.svg" alt="" width="16px" ></div>
-            <div class="button">
+            <div class="button" id="button_index">
               <a href="./join.html" id="signup_drawer"><button id="button_sub">회원가입</button></a>
               <a href="./login.html" id="login_drawer"><button id="button_main">로그인</button></a>
             </div>
-            <!-- <div class="side_list" onclick="openHome()">홈 </div>
-            <hr>
-            <div class="side_list" onclick="openShop()">쇼핑</div>
-            <hr>
-            <div class="side_list" onclick="openShare()">집들이</div>
-            <hr>
-            <div class="side_list" onclick="openOrder()">내 쇼핑</div>
-            <hr> -->
+
+            <div class="button" id="userInfo_index">
+              <img src="./image/profile/1.png" alt="">
+              <p id="nickname_index"></p>
+              <button onclick="logout()">로그아웃</button>
+            </div>
 
             <ul class="list">
-              <li id="li_index"><a href="./index.html">홈</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openShop()">쇼핑</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openShop()">베스트</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openShop()">추천상품</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openShop()">기획전</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openShare()">집들이</a><img src="#" alt=""></li><hr id="hr_index">
-              <li id="li_index"><a href="#" onclick="openOrder()">주문내역</a><img src="#" alt=""></li><hr id="hr_index">
+              <a href="./index.html"><li id="li_index">홈<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShop()"><li id="li_index">쇼핑<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShop()"><li id="li_index">베스트<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShop()"><li id="li_index">추천상품<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShop()"><li id="li_index">기획전<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShare()"><li id="li_index">집들이<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openOrder()"><li id="li_index">주문내역<img src="#" alt=""></li></a><hr id="hr_index">
 
-              <style>
-
-              #close {
-                margin-right: 1rem;
-              }
-
-              .button {
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: auto;
-                    grid-gap: 10px;
-                    margin: 0 1em 2rem 1rem;
-                }
-
-
-              </style>
           </ul> 
         </div>
     </div>
@@ -86,7 +69,29 @@
 
     
     <script>
+      function logout(){
+        sessionStorage.removeItem("name");
+        location.href='index.html'
+      }
+      var name = sessionStorage.getItem("name");
+      function checkUserInfo(){
+        if(name != 'null'){
+          var loginbox = document.getElementById("button_index");
+          loginbox.style.display = "none";
+
+          var userInfo = document.getElementById("userInfo_index");
+          userInfo.style.display = "flex";
+
+          var nickname = document.getElementById("nickname_index");
+          nickname.innerHTML = name;
+        }else{
+          alert("로그인 정보 없음")
+          var userInfo = document.getElementById("userInfo_index");
+          userInfo.style.display = "none";
+        }
+      }
       function openHome(){
+        
         var target = document.getElementById('target');
         fetch ('./home.html').then((response) => response.text())
                     .then((data) => {
@@ -94,6 +99,8 @@
                       var scriptElement = document.createElement('script');
                       scriptElement.src = './js/contents_block_v.js';
                       target.appendChild(scriptElement);
+
+                      checkUserInfo();
                     });
       }          
       function openWrite(){

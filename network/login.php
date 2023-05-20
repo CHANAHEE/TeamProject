@@ -14,11 +14,14 @@
     mysqli_query($db, 'set names utf8');
 
     // 이메일과 비밀번호를 사용하여 사용자 인증하기
-    $sql = "SELECT * FROM account WHERE email='$email' AND password='$password'";
-    $result =mysqli_query($db, $sql);
+    //$sql = "SELECT * FROM account WHERE email='$email' AND password='$password'";
+    $nickname = "SELECT name FROM account WHERE email='$email' AND password='$password'";
+    $result =mysqli_query($db, $nickname);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $name = $row['name'];
 
     if ($result->num_rows > 0) {
-        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginSuccess.html";
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginSuccess.html?name=" . urlencode($name);
         header("Location: $url");
         echo true;
     } else {
