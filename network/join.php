@@ -3,7 +3,7 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    //$imgPath = 
+    $imgPath = $_POST['profile'];
     
     //특수문자 - SQL에서 오동작 방지
     $email = addslashes($email);
@@ -13,7 +13,7 @@
     $db = mysqli_connect('localhost', 'tjdrjs0803', 'dkssud109!', 'tjdrjs0803');
     mysqli_query($db, 'set names utf8');
 
-    $sql = "INSERT INTO account(name,email,password,imgPath) VALUES('$name','$email','$password','qwer')";
+    $sql = "INSERT INTO account(name,email,password,imgPath) VALUES('$name','$email','$password','$imgPath')";
     $result = mysqli_query($db, $sql);
 
     if($result){

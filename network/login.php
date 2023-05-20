@@ -15,13 +15,14 @@
 
     // 이메일과 비밀번호를 사용하여 사용자 인증하기
     //$sql = "SELECT * FROM account WHERE email='$email' AND password='$password'";
-    $nickname = "SELECT name FROM account WHERE email='$email' AND password='$password'";
-    $result =mysqli_query($db, $nickname);
+    $sql = "SELECT name,imgPath FROM account WHERE email='$email' AND password='$password'";
+    $result =mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $name = $row['name'];
+    $imgPath = $row['imgPath'];
 
     if ($result->num_rows > 0) {
-        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginSuccess.html?name=" . urlencode($name);
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginSuccess.html?name=" . urlencode($name) . "&imgPath=" . urlencode($imgPath);
         header("Location: $url");
         echo true;
     } else {

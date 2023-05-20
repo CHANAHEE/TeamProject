@@ -8,8 +8,9 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const name = urlParams.get('name');
-
+            const profile = urlParams.get('imgPath');
             sessionStorage.setItem("name",name);
+            sessionStorage.setItem("imgPath",profile);
         </script>
     </head>
     <body>

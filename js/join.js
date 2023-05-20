@@ -41,3 +41,14 @@ function validateForm() {
 
     return true;
 }
+
+function setProfileImage(){
+    var imgNum = Math.floor(Math.random() * 30 + 1);
+    var profile = "./image/profile/" + imgNum +".png";
+    return profile;
+}
+
+document.getElementById("joinForm").addEventListener("submit", function(event) {
+    var profileValue = setProfileImage();
+    document.getElementById("profileField").value = profileValue;
+});

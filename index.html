@@ -37,7 +37,7 @@
             </div>
 
             <div class="button" id="userInfo_index">
-              <img src="./image/profile/1.png" alt="">
+              <img src="./image/profile/1.png" alt="" id="img_profile">
               <p id="nickname_index"></p>
               <button onclick="logout()">로그아웃</button>
             </div>
@@ -69,11 +69,13 @@
 
     
     <script>
+
       function logout(){
         sessionStorage.removeItem("name");
         location.href='index.html'
       }
       var name = sessionStorage.getItem("name");
+      var imgPath = sessionStorage.getItem("imgPath");
       function checkUserInfo(){
         if(name != 'null'){
           var loginbox = document.getElementById("button_index");
@@ -84,6 +86,9 @@
 
           var nickname = document.getElementById("nickname_index");
           nickname.innerHTML = name;
+
+          var profileImage = document.getElementById("img_profile");
+          profileImage.src = imgPath;
         }else{
           var userInfo = document.getElementById("userInfo_index");
           userInfo.style.display = "none";
