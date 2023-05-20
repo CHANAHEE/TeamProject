@@ -9,6 +9,7 @@
         visibility: collapse;
     }
 }
+
 .button {
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: auto !important;
@@ -194,9 +195,19 @@ div[class="sidebar"] {
     font-size: 30px; 
     flex-basis: 100%;
     text-align: center;
-    margin-bottom: 3rem;
+    
 }
-
+#logout_button{
+    margin-bottom: 2rem;
+    width: 50%;
+	height: 30px;
+	background-color: #17BCE0;
+	border:none;
+	color:white;
+	font-size: 0.8rem;
+    font-family: 'pretendard_regular';
+	border-radius: 0.2rem;
+}
 /* #login_drawer button{
     width: 140px;
     height: 40px;
