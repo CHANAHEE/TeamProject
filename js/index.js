@@ -69,7 +69,10 @@
     fetch ('./order.html').then((response) => response.text())
                 .then((data) => {
                   closeSideBar();
-                  target.innerHTML = data                      
+                  target.innerHTML = data    
+                  var scriptElement = document.createElement('script');
+                  scriptElement.src = './js/order.js';
+                  document.body.appendChild(scriptElement);                  
                 });
   }
   

@@ -33,3 +33,12 @@ for (var i = 0; i < content.length; i++) {
     });
   })(i);
 }
+
+var box = document.getElementsByClassName('box');
+for (var i = 0; i < box.length; i++) {
+  (function(index) {
+    box[index].addEventListener('click', function() {
+      location.href = "./prepare_page.html";
+    });
+  })(i);
+}
