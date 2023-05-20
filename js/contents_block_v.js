@@ -104,8 +104,10 @@ setInterval(() => {
   var name_h = sessionStorage.getItem('name');
   var title_h = document.getElementById('title_home')
 
-  if(name_h != "null"){
+  if(name_h != null){
     title_h.innerHTML = "🏠 " + name_h + " 님을 위한 집들이"
+  }else{
+    title_h.innerHTML = "🏠 유저님을 위한 집들이"
   }
   
 

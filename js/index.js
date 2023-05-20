@@ -1,7 +1,8 @@
-function logout(){
+  function logout(){
     sessionStorage.removeItem("name");
     location.href='index.html'
   }
+
   var name = sessionStorage.getItem("name");
   var imgPath = sessionStorage.getItem("imgPath");
   function checkUserInfo(){
@@ -22,27 +23,22 @@ function logout(){
       userInfo.style.display = "none";
     }
   }
+
+
   function openHome(){
-    
     var target = document.getElementById('target');
     fetch ('./home.html').then((response) => response.text())
                 .then((data) => {
+                  closeSideBar();
                   target.innerHTML = data
                   var scriptElement = document.createElement('script');
                   scriptElement.src = './js/contents_block_v.js';
                   document.body.appendChild(scriptElement);
 
-                  
                   checkUserInfo();
                 });
   }          
-  function openWrite(){
-    var target = document.getElementById('target');
-    fetch ('./share_write.html').then((response) => response.text())
-                .then((data) => {
-                  target.innerHTML = data
-                });
-  }
+
   function openShare(){
     var target = document.getElementById('target');
     fetch ('./share.html').then((response) => response.text())
@@ -62,11 +58,9 @@ function logout(){
                 .then((data) => {
                     closeSideBar();
                     target.innerHTML = data;
-
                     var scriptElement = document.createElement('script');
                     scriptElement.src = './js/shop.js';
                     document.body.appendChild(scriptElement);
-
                 });
   }
 
@@ -77,9 +71,17 @@ function logout(){
                   closeSideBar();
                   target.innerHTML = data                      
                 });
-                
   }
   
+  function openWrite(){
+    var target = document.getElementById('target');
+    fetch ('./share_write.html').then((response) => response.text())
+                .then((data) => {
+                  target.innerHTML = data
+                });
+  }
+
+
   var menuicon = document.getElementById('menuicon');
   menuicon.onclick = function(){openSideBar()};
 
