@@ -77,11 +77,16 @@
   }
   
   function openWrite(){
-    var target = document.getElementById('target');
-    fetch ('./share_write.html').then((response) => response.text())
-                .then((data) => {
-                  target.innerHTML = data
-                });
+    var isSignIn = sessionStorage.getItem("name");
+    if(isSignIn == null){
+      location.href = "./login.html";
+    }else{
+      var target = document.getElementById('target');
+      fetch ('./share_write.html').then((response) => response.text())
+                  .then((data) => {
+                    target.innerHTML = data
+                  });
+    }
   }
 
 
