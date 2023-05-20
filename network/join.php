@@ -17,7 +17,7 @@
     $result = mysqli_query($db, $sql);
 
     if($result){
-        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/successSignUp.html";
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/success_signup.html";
         header("Location: $url");
         echo true;
     } 

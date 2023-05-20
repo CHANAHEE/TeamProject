@@ -22,11 +22,11 @@
     $imgPath = $row['imgPath'];
 
     if ($result->num_rows > 0) {
-        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginSuccess.html?name=" . urlencode($name) . "&imgPath=" . urlencode($imgPath);
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/login_success.html?name=" . urlencode($name) . "&imgPath=" . urlencode($imgPath);
         header("Location: $url");
         echo true;
     } else {
-        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/loginFail.html";
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/login_fail.html";
         header("Location: $url");
         echo true;
     }
