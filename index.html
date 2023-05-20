@@ -46,12 +46,12 @@
 
             <ul class="list">
               <li><a href="./index.html">홈</a><img src="#" alt=""></li><hr>
-              <li onclick="openShop()">쇼핑<img src="#" alt=""></li><hr>
-              <li>베스트<img src="#" alt=""></li><hr>
-              <li>추천상품<img src="#" alt=""></li><hr>
-              <li>기획전<img src="#" alt=""></li><hr>
-              <li onclick="openShare()">집들이<img src="#" alt=""></li><hr>
-              <li onclick="openShop()">주문내역<img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openShop()">쇼핑</a><img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openShop()">베스트</a><img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openShop()">추천상품</a><img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openShop()">기획전</a><img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openShare()">집들이</a><img src="#" alt=""></li><hr>
+              <li><a href="#" onclick="openOrder()">주문내역</a><img src="#" alt=""></li><hr>
 
               <style>
 
@@ -102,17 +102,12 @@
         fetch ('./home.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
+                      var scriptElement = document.createElement('script');
+                      scriptElement.src = './js/contents_block_v.js';
+                      target.appendChild(scriptElement);
 
-                      if(document.getElementById('script') == null){
-                        alert("hello")
-                        var scriptElement = document.createElement('script');
-                        scriptElement.src = './js/contents_block_v.js';
-                        target.appendChild(scriptElement);
-                      }
-
-
+                     
                     });
-         
       }          
       function openWrite(){
         var target = document.getElementById('target');
@@ -151,6 +146,16 @@
         fetch ('./order.html').then((response) => response.text())
                     .then((data) => {
                       target.innerHTML = data
+
+                      var styleElement = document.createElement('link');
+                      styleElement.rel = 'stylesheet';
+                      styleElement.type = 'text/css';
+                      styleElement.href = './css/setting.css';
+
+                      var styleElement2 = document.createElement('link');
+                      styleElement2.rel = 'stylesheet';
+                      styleElement2.type = 'text/css';
+                      styleElement2.href = './css/state.css';
                     });
       }
       
