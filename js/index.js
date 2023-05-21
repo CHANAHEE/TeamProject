@@ -58,9 +58,15 @@
                 .then((data) => {
                     closeSideBar();
                     target.innerHTML = data;
+                    var scriptElement2 = document.createElement('script');
+                    scriptElement2.src = './js/open_shop_detail.js';
+                    document.body.appendChild(scriptElement2);
+                    
                     var scriptElement = document.createElement('script');
                     scriptElement.src = './js/shop.js';
                     document.body.appendChild(scriptElement);
+
+
                 });
   }
 
@@ -119,4 +125,16 @@
     document.getElementById('edit_button').style.color = "white"
     document.getElementById('menuicon_label').style.visibility = "visible"
     document.getElementById('menuicon_label').checked = false
+  }
+
+  function showToast_m(){
+    main.showToast_m();
+  }
+
+  function openSignup_m(){
+    main.openSignup_m();
+  }
+
+  function openSignin_m(){
+    main.openSignin_m();
   }
