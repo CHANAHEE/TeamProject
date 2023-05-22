@@ -26,10 +26,12 @@ fetch('./network/loadShare.php')
 
             //container(최외곽) div 불러오기
             var conshell=document.getElementById('shell');
+
             //a wbox 노드 생성
             var wbox=document.createElement('a');
             conshell.appendChild(wbox);
             var index=""+review[i].no;
+            console.log(index);
             var str3="./share_detail.html?no="+index;
             wbox.setAttribute('href',str3);
             wbox.setAttribute('id',index);

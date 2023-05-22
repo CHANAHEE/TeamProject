@@ -13,6 +13,7 @@ function loadDetail(){
         return response.json();
     }).then(function(data){
         console.log(data);
+        console.log(data);
         //최외곽 id로 찾아오기
         var conshell=document.getElementById('share_container');
         // div imagebox 노드 생성
@@ -44,10 +45,11 @@ function loadDetail(){
         user.appendChild(pfimg);
         //서버에서 불러온 리뷰이미지 주소
         var str=data.pimg;
+        pfimg.setAttribute('src',str);
         //상대경로를 수정 (저장시 ../인데 불러올땐 ./이어야 함)
-        var imgUrl= str.substring(1,str.length);
-        pfimg.setAttribute('src',imgUrl);
-        pfimg.setAttribute('alt',"profile image");
+        // var imgUrl= str.substring(1,str.length);
+        // pfimg.setAttribute('src',imgUrl);
+        // pfimg.setAttribute('alt',"profile image");
         var nickname=document.createElement('p');
         var date=document.createElement('p');
         user.appendChild(nickname);
