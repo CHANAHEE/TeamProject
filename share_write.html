@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="./css/setting.css">
         <link rel="stylesheet" type="text/css" href="./css/write.css">
         <!-- <link rel="stylesheet" href="./css/input.css"> -->
-        <script src="./js/share_write.js"></script>
+        
     </head>
     <body>
 
@@ -17,20 +17,23 @@
                 
                 <div class="imagebox" id="image_container">
                     <label for="input-image" class="custom-file-input">
-                        <img src="./image/icon/icon_camera.svg" alt="">
-                        <span>사진 올리기</span>
+                        <img id="file-img" src="./image/icon/icon_camera.svg" alt="">
+                        <span id="desc">사진 올리기</span>
                         <input type="file" class="inputfile" name="rimg" id="input-image" onchange="readImage(event)">
                     </label>    
                     <button class="appfile" id="select_file">사진선택</button>
-                    <img class="previewbox" id="preview" src="" alt="업로드할 이미지 1장">
+                    <img class="previewbox" id="preview" src="./image/logo.png" alt="업로드할 이미지 1장">
+                    
                     
                 </div>
 
                 <div class="textbox">
                     <input type="text" name="title" placeholder="우리집 간단자랑(제목)" required>
                     <textarea class="form-control" name="review" rows="10" placeholder="우리집 집들이 내용쓰기" required></textarea>
-                    <input type="submit" value="리뷰등록"/>
-                    <button class="submit_btn" id="submit">리뷰등록</button>
+                    <input type="submit" value="리뷰등록" onclick="return getUserInfo()"/>
+                    <input type="hidden" id="user-name" name="user-name">
+                    <input type="hidden" id="user-profile" name="user-profile">
+                    <!-- <button class="submit_btn" id="submit">리뷰등록</button> -->
                 </div>
 
             </form>
@@ -38,3 +41,4 @@
 
     </body>
 </html>
+<script src="./js/share_write.js"></script>
