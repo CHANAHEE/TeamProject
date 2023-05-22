@@ -1,3 +1,5 @@
+
+
 @media all and (max-width: 1240px){
     #edit{
         visibility: collapse;
@@ -8,6 +10,12 @@
     }
 }
 
+.button {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    grid-gap: 10px !important;
+    margin: 0 1em 2rem 1rem !important;
+}
 .logo_container {
     width: 90%;
     max-width: 1240px;
@@ -18,6 +26,12 @@
 .logo_container>div,nav{
     height: 5.5rem;
     align-items: center;
+}
+nav{
+    display: flex;
+    width: 10%;
+    justify-content: flex-start !important;
+    
 }
 #title_container {
     display: flex;
@@ -166,10 +180,39 @@ div[class="sidebar"] {
 
 #close{
     width: fit-content;
-    margin: 2rem 0 2rem auto;
+    margin: 2rem 1rem 2rem auto;
 }
 #login_container #login_drawer{
     margin-left: auto;
+}
+
+#userInfo_index {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+#userInfo_index>img{
+    width: 100px;
+}
+
+#nickname_index{
+    display: block;
+    font-size: 30px; 
+    flex-basis: 100%;
+    text-align: center;
+    
+}
+#logout_button{
+    margin-bottom: 2rem;
+    width: 50%;
+	height: 30px;
+	background-color: #17BCE0;
+	border:none;
+	color:white;
+	font-size: 0.8rem;
+    font-family: 'pretendard_regular';
+	border-radius: 0.2rem;
 }
 /* #login_drawer button{
     width: 140px;

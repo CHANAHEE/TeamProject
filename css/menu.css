@@ -1,3 +1,4 @@
+
 .wrapper {
     width: 90%;
     max-width: 1240px;
@@ -11,7 +12,6 @@
 .boxes {
     display: flex;
     list-style-type: none;
-    background-color: coral;
     justify-content: center;
   align-items: center;
 
@@ -37,6 +37,7 @@
 .box_text {
     margin: 1rem 0 2rem 0;
     font-size: 0.8rem;
+    text-align: center;
 }
 
 li{
