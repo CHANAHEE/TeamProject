@@ -1,30 +1,28 @@
 <?php
-// MySQL 데이터베이스 연결 설정
-$servername = "localhost";
-$username = "mrhi1996";
-$password = "a1b2c3d4!!";
-$dbname = "mrhi1996";
-
-    $name = $_GET['name'];
-    $email = $_GET['email'];
-    $password = $_GET['password'];
-    // $imgPath = 
+    header("Content-Type:text/html; charset=utf-8");
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $imgPath = $_POST['profile'];
     
     //특수문자 - SQL에서 오동작 방지
     $email = addslashes($email);
     $password = addslashes($password);
 
     //MySQL DB [account_email]
-    $db = mysqli_connect('localhost', 'mrhi1996', 'a1b2c3d4!', 'mrhi1996');
+    $db = mysqli_connect('localhost', 'tjdrjs0803', 'dkssud109!', 'tjdrjs0803');
     mysqli_query($db, 'set names utf8');
 
-    $sql = "INSERT INTO account(name,email,password,imgPath) VALUES('$name','$email','$password','qwer')";
+    $sql = "INSERT INTO account(name,email,password,imgPath) VALUES('$name','$email','$password','$imgPath')";
     $result = mysqli_query($db, $sql);
 
     if($result){
-        $url = "http://mrhi1996.dothome.co.kr/login.html";
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/success_signup.html";
         header("Location: $url");
         echo true;
     } 
+    else echo false;
+
+    mysqli_close($db);
 ?>
   
