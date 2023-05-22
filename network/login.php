@@ -1,33 +1,33 @@
 <?php
-// MySQL 데이터베이스 연결 설정
-$servername = "localhost";
-$username = "mrhi1996";
-$password = "a1b2c3d4!!";
-$dbname = "mrhi1996";
+    header("Content-Type:text/html; charset=utf-8");
 
-// POST 요청으로 전달된 로그인 정보 가져오기
-$email = $_POST['email'];
-$password = $_POST['password'];
+    // POST 요청으로 전달된 로그인 정보 가져오기
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// //특수문자 - SQL에서 오동작 방지
-$email = addslashes($email);
-$password = addslashes($password);
+    // //특수문자 - SQL에서 오동작 방지
+    $email = addslashes($email);
+    $password = addslashes($password);
 
-//MySQL DB [account_email]
-$db = mysqli_connect('localhost', 'mrhi1996', 'a1b2c3d4!', 'mrhi1996');
-mysqli_query($db, 'set names utf8');
+    //MySQL DB [account_email]
+    $db = mysqli_connect('localhost', 'tjdrjs0803', 'dkssud109!', 'tjdrjs0803');
+    mysqli_query($db, 'set names utf8');
 
-// 이메일과 비밀번호를 사용하여 사용자 인증하기
-$sql = "SELECT * FROM account WHERE email='$email' AND password='$password'";
-$result =mysqli_query($db, $sql);
+    // 이메일과 비밀번호를 사용하여 사용자 인증하기
+    //$sql = "SELECT * FROM account WHERE email='$email' AND password='$password'";
+    $sql = "SELECT name,imgPath FROM account WHERE email='$email' AND password='$password'";
+    $result =mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $name = $row['name'];
+    $imgPath = $row['imgPath'];
 
-if ($result->num_rows > 0) {
-    // 로그인 성공
-    echo "로그인에 성공했습니다.";
-} else {
-    // 로그인 실패
-    echo "이메일 또는 비밀번호가 올바르지 않습니다.";
-}
-
-
+    if ($result->num_rows > 0) {
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/login_success.html?name=" . urlencode($name) . "&imgPath=" . urlencode($imgPath);
+        header("Location: $url");
+        echo true;
+    } else {
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/login_fail.html";
+        header("Location: $url");
+        echo true;
+    }
 ?>

@@ -8,10 +8,11 @@
 
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/setting.css">
-    <link rel="stylesheet" href="./css/state.css">
-    <link rel="stylesheet" href="./css/input_colum.css">
-
+    <link rel="stylesheet" href="./css/state_index.css">
+    <link rel="stylesheet" href="./css/input_colum_index.css">
+    <script src="./js/index.js"></script>
   </head>
+
   <body onload="openHome()" id="super">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -19,7 +20,7 @@
     <div class="logo_container" id="logo_container">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="navbar-collapse  w-100 order-1 order-md-0 ">
-            <input type="checkbox" id="menuicon" >
+            <input type="checkbox" id="menuicon" onclick="openSideBar()">
 
             <label for="menuicon" id="menuicon_label">
                 <img src="./image/icon/icon_menu.svg" alt="">
@@ -29,56 +30,37 @@
       </nav>
 
       <div class="sidebar" id="sidebar">
-        <div id="menu">
-            <div id="close"><img src="./image/icon/icon_close.svg" alt="" width="16px" ></div>
-            <div class="button">
-              <a href="./join.html" id="signup_drawer"><button id="button_sub">회원가입</button></a>
-              <a href="./login.html" id="login_drawer"><button id="button_main">로그인</button></a>
+        <div ird="menu">
+            <div id="close" onclick="closeSideBar()"><img src="./image/icon/icon_close.svg" alt="" width="16px" ></div>
+            <div class="button" id="button_index">
+              <a href="./join.html" id="signup_drawer" onclick="openSignup_m()"><button id="button_sub">회원가입</button></a>
+              <a href="./login.html" id="login_drawer" onclick="openSignin_m()"><button id="button_main">로그인</button></a>
             </div>
-            <!-- <div class="side_list" onclick="openHome()">홈 </div>
-            <hr>
-            <div class="side_list" onclick="openShop()">쇼핑</div>
-            <hr>
-            <div class="side_list" onclick="openShare()">집들이</div>
-            <hr>
-            <div class="side_list" onclick="openOrder()">내 쇼핑</div>
-            <hr> -->
+
+            <div class="button" id="userInfo_index">
+              <img src="./image/profile/1.png" alt="" id="img_profile">
+              <p id="nickname_index">asdfasdf</p>
+              
+              <button id="logout_button" onclick="logout()">로그아웃</button>
+            </div>
+
 
             <ul class="list">
-              <li>홈<img src="#" alt=""></li><hr>
-              <li>쇼핑<img src="#" alt=""></li><hr>
-              <li>베스트<img src="#" alt=""></li><hr>
-              <li>추천상품<img src="#" alt=""></li><hr>
-              <li>기획전<img src="#" alt=""></li><hr>
-              <li>집들이<img src="#" alt=""></li><hr>
-              <li>주문내역<img src="#" alt=""></li><hr>
+              <a href="#" onclick="openHome()"><li id="li_index">홈<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShop()"><li id="li_index">쇼핑<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="showToast_m()"><li id="li_index">베스트<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="showToast_m()"><li id="li_index">추천상품<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="showToast_m()"><li id="li_index">기획전<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openShare()"><li id="li_index">집들이<img src="#" alt=""></li></a><hr id="hr_index">
+              <a href="#" onclick="openOrder()"><li id="li_index">주문내역<img src="#" alt=""></li></a><hr id="hr_index">
 
-              <style>
-
-              #close {
-                margin-right: 1rem;
-              }
-
-              .button {
-                      grid-template-columns: 1fr 1fr;
-                      grid-template-rows: auto;
-                      grid-gap: 10px;
-                      margin: 0 1em 2rem 1rem;
-                  }
-
-                hr {
-                  margin: 1.2rem 0;
-                }
-              </style>
           </ul> 
         </div>
-    </div>
+      </div>
 
       <!-- 이미지 요소 넣기 -->
-      <div id="title_container"><a href="./index.html" id="logo">두 루 마 리</a></div>
+      <div id="title_container"><a href="./index.html" id="logo"><img src="./image/logo.png" alt="" style="width: 200px;"></a></div>
       
-
-
       <div id="edit">
         <button id="edit_button" onclick="openWrite()">글쓰기</button>
       </div>
@@ -86,98 +68,9 @@
     </div>
     <hr style="margin: 0;">
 
-    <section id="section">
-      <div id="target">
-        
-      </div>
-    </section>
+    <section id="section"><div id="target"></div></section>
 
-    
-  
-    
-    
-    <script>
-      function openHome(){
-        var target = document.getElementById('target');
-        fetch ('./home.html').then((response) => response.text())
-                    .then((data) => {
-                      target.innerHTML = data
-                      var scriptElement = document.createElement('script');
-                      scriptElement.src = './js/contents_block_v.js';
-                      target.appendChild(scriptElement);
-                    });
-         
-      }          
-      function openWrite(){
-        var target = document.getElementById('target');
-        fetch ('./share_write.html').then((response) => response.text())
-                    .then((data) => {
-                      target.innerHTML = data
-                    });
-      }
-      function openShare(){
-        var target = document.getElementById('target');
-        fetch ('./share.html').then((response) => response.text())
-                    .then((data) => {
-                      target.innerHTML = data
-                      var scriptElement = document.createElement('script');
-                      scriptElement.type = 'text/javascript'
-                      scriptElement.src = './js/open_share.js';
-                      target.appendChild(scriptElement);
-                    });
-      }
-
-
-
-      function openShop(){
-        var target = document.getElementById('target');
-        fetch ('./shop.html').then((response) => response.text())
-                    .then((data) => {
-                      target.innerHTML = data
-                      var scriptElement = document.createElement('script');
-                      scriptElement.src = './js/contents_block_v.js';
-                      target.appendChild(scriptElement);
-                    });
-      }
-
-      function openOrder(){
-        var target = document.getElementById('target');
-        fetch ('./order.html').then((response) => response.text())
-                    .then((data) => {
-                      target.innerHTML = data
-                    });
-      }
-      
-      var menuicon = document.getElementById('menuicon');
-      menuicon.onclick = function(){
-        document.getElementById('sidebar').style.left = "0px";
-        document.getElementById('super').style.backgroundColor = "#888888";
-        document.getElementById('section').style.opacity = 0.4;
-        document.getElementById('title_container').style.opacity = 0.4;
-        document.getElementById('title_container').style.backgroundColor = "#888888";
-        document.getElementById('logo_container').style.backgroundColor = "#888888";
-        document.getElementById('edit_button').style.backgroundColor = "#999999";
-        document.getElementById('edit_button').style.color = "#777777 "
-        document.getElementById('menuicon_label').style.visibility = "hidden"
-        
-   
-      }
-      var close = document.getElementById('close')
-      close.onclick = function(){
-        document.getElementById('sidebar').style.left = "-100%";
-        document.getElementById('super').style.backgroundColor = "transparent";
-        document.getElementById('section').style.opacity = 1;
-        document.getElementById('title_container').style.opacity = 1;
-        document.getElementById('title_container').style.backgroundColor = "transparent";
-        document.getElementById('logo_container').style.backgroundColor = "transparent";
-        document.getElementById('edit_button').style.backgroundColor = "#17BCE0";
-        document.getElementById('edit_button').style.color = "white"
-        document.getElementById('menuicon_label').style.visibility = "visible"
-        document.getElementById('menuicon_label').checked = false
-      }
-
-      
-    </script>
 
   </body>
 </html>
+

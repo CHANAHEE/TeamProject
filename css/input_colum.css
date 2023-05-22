@@ -17,12 +17,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     
     margin-top: 1rem;
 
     background-size: cover;
     background-position: center center;
 }
+
+.previewbox {
+    width: 100%;
+    height: 100%;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 input[type=text] {
     width: 100%;
@@ -105,5 +122,48 @@ textarea::placeholder {
         grid-template-rows: auto;
         grid-gap: 20px;
     }
+
+    .imagebox {
+        background-color: #ffffff;
+    }
+
+    .appfile {
+        display: none;
+    }
+
+    .inputfile {
+        display: block;
+    }
+
+    .submit_btn {
+        display: none;
+    }
+
 }
+
+@media screen and (max-width: 1023px) {
+
+    .appfile {
+        display: block;
+        width: 100px;
+        height: 20px;
+    }
+
+    .inputfile {
+        display: none;
+    }
+    
+    input[type=submit] {
+        display: none;
+    }
+
+    .submit_btn {
+        display: block;
+        width: 100px;
+        height: 20px;
+    }
+
+}
+
+
 

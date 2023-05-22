@@ -1,0 +1,18 @@
+
+#hr_index {
+    margin: 1.2rem 0;
+  }
+
+
+#li_index {
+    list-style-type: none;
+    margin: 0 0 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    width: 2rem;
+    text-align: right;
+}
