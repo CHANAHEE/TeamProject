@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>share_write</title>
-    <link rel="stylesheet" type="text/css" href="./css/setting.css">
-    <link rel="stylesheet" type="text/css" href="./css/input_colum.css">
-    <link rel="stylesheet" href="./css/input.css">
-    <script src="./js/share_write.js"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>share_write</title>
+        <link rel="stylesheet" type="text/css" href="./css/setting.css">
+        <link rel="stylesheet" type="text/css" href="./css/write.css">
+        <!-- <link rel="stylesheet" href="./css/input.css"> -->
+        <script src="./js/share_write.js"></script>
+    </head>
+    <body>
 
-    <div class="container">
-        <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
-        <div class="imagebox" id="image_container">
-            <input type="file" class="inputfile" name="rimg" id="input-image" onchange="readImage(event)">
-            <button class="appfile" id="select_file">사진선택</button>
-            <img class="previewbox" id="preview" src="" alt="업로드할 이미지 1장">
-            
+        <div class="container">
+            <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
+                
+                <div class="imagebox" id="image_container">
+                    <label for="input-image" class="custom-file-input">
+                        <img src="./image/icon/icon_camera.svg" alt="">
+                        <span>사진 올리기</span>
+                        <input type="file" class="inputfile" name="rimg" id="input-image" onchange="readImage(event)">
+                    </label>    
+                    <button class="appfile" id="select_file">사진선택</button>
+                    <img class="previewbox" id="preview" src="" alt="업로드할 이미지 1장">
+                    
+                </div>
+
+                <div class="textbox">
+                    <input type="text" name="title" placeholder="우리집 간단자랑(제목)" required>
+                    <textarea class="form-control" name="review" rows="10" placeholder="우리집 집들이 내용쓰기" required></textarea>
+                    <input type="submit" value="리뷰등록"/>
+                    <button class="submit_btn" id="submit">리뷰등록</button>
+                </div>
+
+            </form>
         </div>
 
-        <div class="textbox">
-            <input type="text" name="title" placeholder="우리집 간단자랑(제목)" required>
-            <textarea class="form-control" name="review" rows="10" placeholder="우리집 집들이 내용쓰기" required></textarea>
-
-        </div>
-        <input type="submit" value="리뷰등록"/>
-        <button class="submit_btn" id="submit">리뷰등록</button>
-        </form>
-    </div>
-
-</body>
+    </body>
 </html>
