@@ -9,6 +9,7 @@
 
           var span = document.getElementById('desc');
           span.style.display = "none"
+          
           // var parent=document.getElementById("image_container");
           // var preimg= document.getElementById("preview");
           // var img = document.createElement("img");

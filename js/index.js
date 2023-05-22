@@ -49,6 +49,11 @@
                   scriptElement.type = 'text/javascript'
                   scriptElement.src = './js/open_share.js';
                   target.appendChild(scriptElement);
+
+                  var scriptElement2 = document.createElement('script');
+                  scriptElement2.type = 'text/javascript'
+                  scriptElement2.src = './js/share.js';
+                  target.appendChild(scriptElement2);
                 });
   }
 
