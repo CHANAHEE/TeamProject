@@ -2,10 +2,12 @@
     header('Content-Type:text/plain; charset=utf-8');
     
     //아이디랑 프로필사진은 dummy임 나중에 회원로그인 처리후 수정예정
-    $id="김마리씨";
-    $dstName1="../image/profile/profile02.png";
+    // $id="김마리씨";
+    // $dstName1="../image/profile/profile02.png";
 
     //form으로 전달된 데이터들
+    $id=$_POST['user-name'];
+    $dstName1=$_POST['user-profile'];
     $title=$_POST['title'];
     $review=$_POST['review'];
 
@@ -25,21 +27,20 @@
     $now=date('Y-m-d H:i:s');
 
     //MySQL DB에 데이터를 저장[테이블명: teamprojectShare]
-    $db=mysqli_connect('localhost','wny2023','thdek543!','wny2023');
+    $db=mysqli_connect('localhost','tjdrjs0803','dkssud109!','tjdrjs0803');
     mysqli_query($db,"set names utf8");
 
     //저장할 데이터($id, $pass, $email, $file, $dstName, $now)들을 삽입하는 쿼리문
-    $sql="INSERT INTO teamprojectShare(id, pimg, rimg, review, title, date) VALUES ('$id','$dstName1','$dstName','$review','$title','$now')";
+    $sql="INSERT INTO share(id, pimg, rimg, review, title, date) VALUES ('$id','$dstName1','$dstName','$review','$title','$now')";
     $result=mysqli_query($db,$sql);
 
     //$result로 확인 echo
     if($result){
-        $url = "http://wny2023.dothome.co.kr/ateamProject/share.html";
+        $url = "http://tjdrjs0803.dothome.co.kr/TeamProject/index.html";
         header("Location: $url");
         echo true;
     } 
     else echo false;
 
     mysqli_close($db);
-
 ?>
