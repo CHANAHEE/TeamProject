@@ -26,7 +26,7 @@
 
   
   function openHome(){    
-    main.selectSideMenu("home");
+    
     var target = document.getElementById('target');
     fetch ('./home.html').then((response) => response.text())
                 .then((data) => {
@@ -39,10 +39,11 @@
 
                   checkUserInfo();
                 });
+                //main.selectSideMenu("home");
   }          
   
   function openShop(){
-    main.selectSideMenu("shop");
+   
     var target = document.getElementById('target');
     fetch ('./shop.html').then((response) => response.text())
                 .then((data) => {
@@ -56,13 +57,12 @@
                     var scriptElement = document.createElement('script');
                     scriptElement.src = './js/shop.js';
                     document.body.appendChild(scriptElement);
-
-
                 });
+                main.selectSideMenu("shop");
   }
   
   function openShare(){
-    main.selectSideMenu("share");
+    
     var target = document.getElementById('target');
     fetch ('./share.html').then((response) => response.text())
                 .then((data) => {
@@ -79,10 +79,11 @@
                   scriptElement2.src = './js/share.js';
                   target.appendChild(scriptElement2);
                 });
+                main.selectSideMenu("share");
   }
 
   function openOrder(){
-    main.selectSideMenu("order");
+    
     var target = document.getElementById('target');
     fetch ('./order.html').then((response) => response.text())
                 .then((data) => {
@@ -92,6 +93,7 @@
                   scriptElement.src = './js/order.js';
                   document.body.appendChild(scriptElement);                  
                 });
+                main.selectSideMenu("order");
   }
   
   function openWrite(){
@@ -154,6 +156,10 @@
     main.openSignin_m();
   }
 
+  function openWrite_m(){
+    
+    main.openWrite_m();
+  }
   function readImage(event) {
     var reader = new FileReader();
 

@@ -10,3 +10,9 @@
     text-decoration: underline;
     color: #5B5B5B;
 }
+
+@media(max-width: 1024px){
+    #container_login{
+        width: 18rem;
+    }
+}
