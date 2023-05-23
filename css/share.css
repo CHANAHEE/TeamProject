@@ -1,17 +1,25 @@
 /* share.html css */
 /* ------------------------------------------------------- */
 /* 기본설정 */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
 a {
     text-decoration: none;
     color: #525252;
 }
-
+h1{
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
 /* 폰트설정 */
 @font-face {
     font-family: 'pretendard_regular';
@@ -79,6 +87,7 @@ hr {
     }
 }
   
+
 .card {
     min-height: 100%;
     background: #EEE;
@@ -97,19 +106,8 @@ hr {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 } */
   
-.rec article {
-    padding: 1rem 0.5rem;
-    /* display: flex; */
-    /* flex-direction: column; */
-    justify-content: space-between;
-    flex: 1;
-    background-color: white;
-}
 
-h1{
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
+
   
 .image {
     border-radius: 0.2em;
@@ -117,13 +115,7 @@ h1{
     background-size: cover;
     background-position: center center;
 }
-  
-.rec p {
-    font-size: 0.8rem;
-    flex: 1;
-    line-height: 1.4;
-    font-family: "MyFont", sans-serif;
-}
+
 
 /* share_write.html css */
 /* ------------------------------------------------------- */
