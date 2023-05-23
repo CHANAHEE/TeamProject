@@ -1,39 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>review_write</title>
-        <link rel="stylesheet" href="./css/share.css">
-        <script src="./js/share.js"></script>
-    </head>
-    <body>
-        <div class="container_main">
-            <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
-                <div class="input_container">
-                    <div class="item">
-                        <img id="profile" src="./image/profile/profile02.png" alt="profile">
-                        <p id="name">김마리씨</p>
-                    </div>
-                    <div class="itemw">
-                        <input type="file" name="rimg" id="rimg" accept="image/*" onchange="setThumbnail(this);"/>             
-                    </div>
-                    <div class="itemw">
-                        <img id="preview" alt="올릴파일">
-                    </div>
-                    <div class="itemw">
-                        <input type="text" name="title" id="title"/>
-                    </div>
-                    <div class="itemw">
-                        <input type="text" name="review" id="review"/>
-                    </div>
-                    <div class="itemw">
-                        <input type="submit" value="리뷰등록"/>
-                    </div>
-                </div>
-                <div></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>share_write</title>
+    <link rel="stylesheet" type="text/css" href="./css/setting.css">
+    <link rel="stylesheet" type="text/css" href="./css/input_colum.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <script src="./js/share_write.js"></script>
+</head>
+<body>
 
-            </form>
+    <div class="container">
+        <form action="./network/addShare.php" method="post" enctype="multipart/form-data">
+        <div class="imagebox" id="image_container">
+            <input type="file" class="inputfile" name="rimg" id="input-image" onchange="readImage(event)">
+            <button class="appfile" id="select_file">사진선택</button>
+            <img class="previewbox" id="preview" src="" alt="업로드할 이미지 1장">
+            
         </div>
-       
-    </body>
+
+        <div class="textbox">
+            <input type="text" name="title" placeholder="우리집 간단자랑(제목)" required>
+            <textarea class="form-control" name="review" rows="10" placeholder="우리집 집들이 내용쓰기" required></textarea>
+
+        </div>
+        <input type="submit" value="리뷰등록"/>
+        <button class="submit_btn" id="submit">리뷰등록</button>
+        </form>
+    </div>
+
+</body>
 </html>

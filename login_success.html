@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>No AJAX</title>
+        <link rel="stylesheet" href="./css/login_success.css">
+
+    </head>
+    <body>
+        <div style='height: 3rem;'></div>
+        <div class=container>
+            <div id='success'>
+                <p id='title'>로그인 완료</p>
+                <p id='message'>로그인되었습니다!</p>
+            </div>
+            
+            <div id='button'>
+                <a href='http://tjdrjs0803.dothome.co.kr/TeamProject/index.html' onclick="openSignup_m()"><button id='button_main'>홈화면으로</button></a>
+            </div>
+        </div>
+        
+
+        <script>
+            
+            console.log("헬롱");
+            function openSignup_m(){
+                alert("헬롱2")
+                login.openIndexPage_m();
+            }
+            
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const name = urlParams.get('name');
+            const profile = urlParams.get('imgPath');
+            sessionStorage.setItem("name",name);
+            sessionStorage.setItem("imgPath",profile);
+
+        </script>
+    </body>
+</html>

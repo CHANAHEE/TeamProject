@@ -1,0 +1,71 @@
+.container {
+    max-width: 360px;
+    height: 70%;
+    margin: 10rem auto 0 auto;
+    margin-bottom: 60px;
+    align-content: center;
+    
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
+}
+
+input::placeholder {
+    font-family: 'pretendard_regular';
+    color: #A8A8A8;
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem auto;
+    box-sizing: border-box;
+    font-family: 'pretendard_regular';
+    font-size: 1rem;
+}
+
+textarea::placeholder {
+    font-family: 'pretendard_regular';
+    color: #A8A8A8;
+    font-size: 1rem;
+}
+
+#button_main{
+	width: 100%;
+	height: 56px;
+	background-color: #17BCE0;
+	border:none;
+	color:white;
+	font-size: 1.2rem;
+    font-family: 'pretendard_regular';
+	border-radius: 0.2rem;
+    margin-top: 1rem;
+}
+#button_sub {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+    border: 1px solid #17BCE0;
+	color:#17BCE0;
+	font-size: 1.2rem;
+    font-family: 'pretendard_regular';
+	border-radius: 0.2rem;
+}
+
+

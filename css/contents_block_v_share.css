@@ -18,10 +18,10 @@
     }
 }
   
-.card {
+.rec {
     min-height: 100%;
-    background: #EEE;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* background: #EEE;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     /* display: flex; */
     /* flex-direction: column; */
     position: relative;
@@ -36,7 +36,7 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 } */
   
-.card article {
+.rec article {
     padding: 1rem 0.5rem;
     /* display: flex; */
     /* flex-direction: column; */
@@ -57,8 +57,28 @@ h1{
     background-position: center center;
 }
   
-.card p {
+.rec p {
     font-size: 0.8rem;
     flex: 1;
     line-height: 1.4;
+}
+
+/* 폰트설정 */
+@font-face {
+    font-family: 'pretendard_regular';
+    src: url(../font/pretendard_regular.otf);
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'pretendard_bold';
+    src: url(../font/pretendard_bold.otf);
+}
+
+body, html {
+    line-height: 1;
+    font-family: 'pretendard_regular','Gill Sans',sans-serif ;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.4px;
+    font-size: 1rem;
 }
