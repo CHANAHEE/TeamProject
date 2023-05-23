@@ -49,6 +49,11 @@
                   scriptElement.type = 'text/javascript'
                   scriptElement.src = './js/open_share.js';
                   target.appendChild(scriptElement);
+
+                  var scriptElement2 = document.createElement('script');
+                  scriptElement2.type = 'text/javascript'
+                  scriptElement2.src = './js/share.js';
+                  target.appendChild(scriptElement2);
                 });
   }
 
@@ -137,4 +142,42 @@
 
   function openSignin_m(){
     main.openSignin_m();
+  }
+
+  function readImage(event) {
+    var reader = new FileReader();
+
+        reader.onload = function(event) {
+          var img = document.getElementById('file-img')
+          img.src = event.target.result;
+          img.style.width = '100%';
+          img.style.height = '100%';
+
+          var span = document.getElementById('desc');
+          span.style.display = "none"
+          // var parent=document.getElementById("image_container");
+          // var preimg= document.getElementById("preview");
+          // var img = document.createElement("img");
+          // img.setAttribute("id","preview");
+          // img.setAttribute("class","previewbox");
+          // img.setAttribute("src", event.target.result);
+          // img.setAttribute("alt","preview");
+          // // img.setAttribute("style","width=300px; height=300px");
+          // parent.replaceChild(img,preimg);
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+  }
+
+  function getUserInfo(){
+    var userNameData = sessionStorage.getItem("name");
+    var userProfileData = sessionStorage.getItem("imgPath");
+
+    var userName = document.getElementById('user-name');
+    var userProfile = document.getElementById('user-profile');
+    
+    userName.value = userNameData;
+    userProfile.value = userProfileData;
+    
+    return true;
   }

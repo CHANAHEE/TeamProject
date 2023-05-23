@@ -1,4 +1,4 @@
-.profilebox {
+.profilebox_share {
     width: 100%;
     max-width: 1240px;
     margin: 0.5rem auto 0 auto;
@@ -8,32 +8,58 @@
     grid-template-columns: 1fr;
 }
 
-.profilebox img {
+.profilebox_share img {
     width: 4rem;
+    margin-right: 0.5rem;
 }
 
-#user {
+#user_share {
     margin: 1rem 0;
 }
 
-#name {
+#name_share {
     font-family: pretendard_bold; 
     font-size: 1.2rem;
     margin: 0.5rem 0;
 }
 
-#date {
+#date_share {
     font-size: 0.8rem; 
     color: #8E8E8E;
 }
 
-#title {
+#title_share {
     font-family: pretendard_bold;
-    font-size: 2rem;
+    font-size: 3rem;
+    padding: 1rem 0;
 }
 
-#cont #text {
+#cont_share #text_share {
     font-size: 0.9rem;
     line-height: 1.4rem;
     margin: 1rem 0;
 }
+
+
+.container{
+    display: flex !important;
+    flex-direction: column !important;
+    
+}
+.imagebox_share img{
+    width: 100%;
+    
+    height: 30rem;
+    box-sizing: border-box;
+    
+}
+
+#user_share{
+    display: flex;
+}
+.profilebox_share{
+    width: 70%;
+    box-sizing: border-box;
+}
+
+
