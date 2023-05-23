@@ -35,7 +35,7 @@ fetch('./network/loadShare.php')
             var str3="./share_detail.html?no="+index;
             wbox.setAttribute('href',str3);
             wbox.setAttribute('id',index);
-
+            wbox.setAttribute("class","wcard");
             //div box 노드 생성
             var box = document.createElement('div');
             wbox.appendChild(box);
