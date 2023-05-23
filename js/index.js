@@ -24,12 +24,14 @@
     }
   }
 
-
-  function openHome(){
+  
+  function openHome(){    
+    main.selectSideMenu("home");
     var target = document.getElementById('target');
     fetch ('./home.html').then((response) => response.text())
                 .then((data) => {
                   closeSideBar();
+                  
                   target.innerHTML = data
                   var scriptElement = document.createElement('script');
                   scriptElement.src = './js/contents_block_v.js';
@@ -38,12 +40,34 @@
                   checkUserInfo();
                 });
   }          
+  
+  function openShop(){
+    main.selectSideMenu("shop");
+    var target = document.getElementById('target');
+    fetch ('./shop.html').then((response) => response.text())
+                .then((data) => {
+                    closeSideBar();
+                    
+                    target.innerHTML = data;
+                    var scriptElement2 = document.createElement('script');
+                    scriptElement2.src = './js/open_shop_detail.js';
+                    document.body.appendChild(scriptElement2);
+                    
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = './js/shop.js';
+                    document.body.appendChild(scriptElement);
 
+
+                });
+  }
+  
   function openShare(){
+    main.selectSideMenu("share");
     var target = document.getElementById('target');
     fetch ('./share.html').then((response) => response.text())
                 .then((data) => {
                   closeSideBar();
+                  
                   target.innerHTML = data
                   var scriptElement = document.createElement('script');
                   scriptElement.type = 'text/javascript'
@@ -57,25 +81,8 @@
                 });
   }
 
-  function openShop(){
-    var target = document.getElementById('target');
-    fetch ('./shop.html').then((response) => response.text())
-                .then((data) => {
-                    closeSideBar();
-                    target.innerHTML = data;
-                    var scriptElement2 = document.createElement('script');
-                    scriptElement2.src = './js/open_shop_detail.js';
-                    document.body.appendChild(scriptElement2);
-                    
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = './js/shop.js';
-                    document.body.appendChild(scriptElement);
-
-
-                });
-  }
-
   function openOrder(){
+    main.selectSideMenu("order");
     var target = document.getElementById('target');
     fetch ('./order.html').then((response) => response.text())
                 .then((data) => {
@@ -100,6 +107,9 @@
     }
   }
 
+  function selectSideMenu(id){
+    main.selectSideMenu(id);
+  }
 
   var menuicon = document.getElementById('menuicon');
   menuicon.onclick = function(){openSideBar()};
