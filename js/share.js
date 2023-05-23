@@ -31,7 +31,7 @@ function loadItems(){
             wbox.setAttribute('href',str3);
             console.log(str3);
             wbox.setAttribute('id',index);
-
+            wbox.setAttribute("class","wcard");
             //div box 노드 생성
             var box = document.createElement('div');
             wbox.appendChild(box);
